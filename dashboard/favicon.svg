@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="S.">
+  <!-- Fondo redondeado: azul profundo del dashboard -->
+  <rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="#0c4a6e"/>
+  <!-- Letterform 'S' con trazo limpio en blanco -->
+  <path d="M44 19
+           C 41 15, 35 13, 30 13
+           C 22 13, 17 17, 17 23
+           C 17 29, 22 31, 30 33
+           C 38 35, 47 37, 47 44
+           C 47 51, 40 55, 32 55
+           C 25 55, 19 53, 16 49"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <!-- Punto característico, en ámbar (acento de la marca / del dashboard) -->
+  <circle cx="51" cy="50" r="5.5" fill="#f59e0b"/>
+</svg>

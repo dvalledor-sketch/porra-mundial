@@ -1,0 +1,38 @@
+name: Recalcular ranking
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pronosticos/**'          # Daniel sube un nuevo pronóstico
+      - 'data/resultados_reales*' # o corrige un resultado a mano
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recalculate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install openpyxl requests
+
+      - name: Calcular puntos
+        run: python scripts/scorer.py
+
+      - name: Commit dashboard/data.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/resultados_reales.xlsx data/resultados_reales_elim.xlsx dashboard/data.json dashboard/index.html dashboard/dashboard.html
+          git diff --staged --quiet && echo "Sin cambios" || \
+            git commit -m "ranking: recalculado $(date -u '+%Y-%m-%d %H:%M UTC')" && \
+            git push

@@ -1,0 +1,3 @@
+{
+  "_comentario": "Solo necesario cuando un partido de eliminatorias termino en empate a 90'. Escribe el nombre exacto del equipo que paso (por prorroga/penaltis). Ejemplo: {\"R32-01\": \"Espana\", \"QF-02\": \"Brasil\"}"
+}

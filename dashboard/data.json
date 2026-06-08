@@ -1,0 +1,6232 @@
+{
+  "torneo": "Copa Mundial de la FIFA 2026",
+  "actualizado": "2026-06-08T15:55:52+00:00",
+  "limites": {
+    "_comentario": "Hora límite (ISO 8601 con zona horaria) para cada fase. Un pronóstico modificado después de su límite se invalida automáticamente. Hora España (CEST = UTC+2 en verano).",
+    "limite_grupos": "2026-06-11T15:00:00+00:00",
+    "limite_eliminatorias": "2026-06-28T15:00:00+00:00",
+    "limite_ronda_32": "2026-06-28T15:00:00+00:00",
+    "limite_octavos": "2026-07-04T15:00:00+00:00",
+    "limite_cuartos": "2026-07-09T15:00:00+00:00",
+    "limite_semifinales": "2026-07-14T15:00:00+00:00",
+    "limite_final": "2026-07-17T15:00:00+00:00",
+    "_nota": "Los premios especiales (MVP, Goleador, Portero) comparten la fecha límite de grupos. Ajusta las horas exactas según el horario oficial de la FIFA."
+  },
+  "puntuacion": {
+    "pleno": 3,
+    "tendencia": 2,
+    "quien_pasa": 1,
+    "bonus_especial": 15
+  },
+  "partidos": [
+    {
+      "id": "G-A1-A2",
+      "fase": "grupos",
+      "grupo": "A",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "México",
+      "visitante": "Sudáfrica",
+      "bandera_local": "🇲🇽",
+      "bandera_visitante": "🇿🇦"
+    },
+    {
+      "id": "G-A3-A4",
+      "fase": "grupos",
+      "grupo": "A",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Corea del Sur",
+      "visitante": "Chequia",
+      "bandera_local": "🇰🇷",
+      "bandera_visitante": "🇨🇿"
+    },
+    {
+      "id": "G-A1-A3",
+      "fase": "grupos",
+      "grupo": "A",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "México",
+      "visitante": "Corea del Sur",
+      "bandera_local": "🇲🇽",
+      "bandera_visitante": "🇰🇷"
+    },
+    {
+      "id": "G-A2-A4",
+      "fase": "grupos",
+      "grupo": "A",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Sudáfrica",
+      "visitante": "Chequia",
+      "bandera_local": "🇿🇦",
+      "bandera_visitante": "🇨🇿"
+    },
+    {
+      "id": "G-A1-A4",
+      "fase": "grupos",
+      "grupo": "A",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "México",
+      "visitante": "Chequia",
+      "bandera_local": "🇲🇽",
+      "bandera_visitante": "🇨🇿"
+    },
+    {
+      "id": "G-A2-A3",
+      "fase": "grupos",
+      "grupo": "A",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Sudáfrica",
+      "visitante": "Corea del Sur",
+      "bandera_local": "🇿🇦",
+      "bandera_visitante": "🇰🇷"
+    },
+    {
+      "id": "G-B1-B2",
+      "fase": "grupos",
+      "grupo": "B",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Canadá",
+      "visitante": "Suiza",
+      "bandera_local": "🇨🇦",
+      "bandera_visitante": "🇨🇭"
+    },
+    {
+      "id": "G-B3-B4",
+      "fase": "grupos",
+      "grupo": "B",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Catar",
+      "visitante": "Bosnia y Herzegovina",
+      "bandera_local": "🇶🇦",
+      "bandera_visitante": "🇧🇦"
+    },
+    {
+      "id": "G-B1-B3",
+      "fase": "grupos",
+      "grupo": "B",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Canadá",
+      "visitante": "Catar",
+      "bandera_local": "🇨🇦",
+      "bandera_visitante": "🇶🇦"
+    },
+    {
+      "id": "G-B2-B4",
+      "fase": "grupos",
+      "grupo": "B",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Suiza",
+      "visitante": "Bosnia y Herzegovina",
+      "bandera_local": "🇨🇭",
+      "bandera_visitante": "🇧🇦"
+    },
+    {
+      "id": "G-B1-B4",
+      "fase": "grupos",
+      "grupo": "B",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Canadá",
+      "visitante": "Bosnia y Herzegovina",
+      "bandera_local": "🇨🇦",
+      "bandera_visitante": "🇧🇦"
+    },
+    {
+      "id": "G-B2-B3",
+      "fase": "grupos",
+      "grupo": "B",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Suiza",
+      "visitante": "Catar",
+      "bandera_local": "🇨🇭",
+      "bandera_visitante": "🇶🇦"
+    },
+    {
+      "id": "G-C1-C2",
+      "fase": "grupos",
+      "grupo": "C",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Brasil",
+      "visitante": "Marruecos",
+      "bandera_local": "🇧🇷",
+      "bandera_visitante": "🇲🇦"
+    },
+    {
+      "id": "G-C3-C4",
+      "fase": "grupos",
+      "grupo": "C",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Escocia",
+      "visitante": "Haití",
+      "bandera_local": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "bandera_visitante": "🇭🇹"
+    },
+    {
+      "id": "G-C1-C3",
+      "fase": "grupos",
+      "grupo": "C",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Brasil",
+      "visitante": "Escocia",
+      "bandera_local": "🇧🇷",
+      "bandera_visitante": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    {
+      "id": "G-C2-C4",
+      "fase": "grupos",
+      "grupo": "C",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Marruecos",
+      "visitante": "Haití",
+      "bandera_local": "🇲🇦",
+      "bandera_visitante": "🇭🇹"
+    },
+    {
+      "id": "G-C1-C4",
+      "fase": "grupos",
+      "grupo": "C",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Brasil",
+      "visitante": "Haití",
+      "bandera_local": "🇧🇷",
+      "bandera_visitante": "🇭🇹"
+    },
+    {
+      "id": "G-C2-C3",
+      "fase": "grupos",
+      "grupo": "C",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Marruecos",
+      "visitante": "Escocia",
+      "bandera_local": "🇲🇦",
+      "bandera_visitante": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    {
+      "id": "G-D1-D2",
+      "fase": "grupos",
+      "grupo": "D",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Estados Unidos",
+      "visitante": "Paraguay",
+      "bandera_local": "🇺🇸",
+      "bandera_visitante": "🇵🇾"
+    },
+    {
+      "id": "G-D3-D4",
+      "fase": "grupos",
+      "grupo": "D",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Australia",
+      "visitante": "Turquía",
+      "bandera_local": "🇦🇺",
+      "bandera_visitante": "🇹🇷"
+    },
+    {
+      "id": "G-D1-D3",
+      "fase": "grupos",
+      "grupo": "D",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Estados Unidos",
+      "visitante": "Australia",
+      "bandera_local": "🇺🇸",
+      "bandera_visitante": "🇦🇺"
+    },
+    {
+      "id": "G-D2-D4",
+      "fase": "grupos",
+      "grupo": "D",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Paraguay",
+      "visitante": "Turquía",
+      "bandera_local": "🇵🇾",
+      "bandera_visitante": "🇹🇷"
+    },
+    {
+      "id": "G-D1-D4",
+      "fase": "grupos",
+      "grupo": "D",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Estados Unidos",
+      "visitante": "Turquía",
+      "bandera_local": "🇺🇸",
+      "bandera_visitante": "🇹🇷"
+    },
+    {
+      "id": "G-D2-D3",
+      "fase": "grupos",
+      "grupo": "D",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Paraguay",
+      "visitante": "Australia",
+      "bandera_local": "🇵🇾",
+      "bandera_visitante": "🇦🇺"
+    },
+    {
+      "id": "G-E1-E2",
+      "fase": "grupos",
+      "grupo": "E",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Alemania",
+      "visitante": "Curazao",
+      "bandera_local": "🇩🇪",
+      "bandera_visitante": "🇨🇼"
+    },
+    {
+      "id": "G-E3-E4",
+      "fase": "grupos",
+      "grupo": "E",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Costa Rica",
+      "visitante": "Ecuador",
+      "bandera_local": "🇨🇷",
+      "bandera_visitante": "🇪🇨"
+    },
+    {
+      "id": "G-E1-E3",
+      "fase": "grupos",
+      "grupo": "E",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Alemania",
+      "visitante": "Costa Rica",
+      "bandera_local": "🇩🇪",
+      "bandera_visitante": "🇨🇷"
+    },
+    {
+      "id": "G-E2-E4",
+      "fase": "grupos",
+      "grupo": "E",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Curazao",
+      "visitante": "Ecuador",
+      "bandera_local": "🇨🇼",
+      "bandera_visitante": "🇪🇨"
+    },
+    {
+      "id": "G-E1-E4",
+      "fase": "grupos",
+      "grupo": "E",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Alemania",
+      "visitante": "Ecuador",
+      "bandera_local": "🇩🇪",
+      "bandera_visitante": "🇪🇨"
+    },
+    {
+      "id": "G-E2-E3",
+      "fase": "grupos",
+      "grupo": "E",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Curazao",
+      "visitante": "Costa Rica",
+      "bandera_local": "🇨🇼",
+      "bandera_visitante": "🇨🇷"
+    },
+    {
+      "id": "G-F1-F2",
+      "fase": "grupos",
+      "grupo": "F",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Países Bajos",
+      "visitante": "Japón",
+      "bandera_local": "🇳🇱",
+      "bandera_visitante": "🇯🇵"
+    },
+    {
+      "id": "G-F3-F4",
+      "fase": "grupos",
+      "grupo": "F",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Túnez",
+      "visitante": "Suecia",
+      "bandera_local": "🇹🇳",
+      "bandera_visitante": "🇸🇪"
+    },
+    {
+      "id": "G-F1-F3",
+      "fase": "grupos",
+      "grupo": "F",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Países Bajos",
+      "visitante": "Túnez",
+      "bandera_local": "🇳🇱",
+      "bandera_visitante": "🇹🇳"
+    },
+    {
+      "id": "G-F2-F4",
+      "fase": "grupos",
+      "grupo": "F",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Japón",
+      "visitante": "Suecia",
+      "bandera_local": "🇯🇵",
+      "bandera_visitante": "🇸🇪"
+    },
+    {
+      "id": "G-F1-F4",
+      "fase": "grupos",
+      "grupo": "F",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Países Bajos",
+      "visitante": "Suecia",
+      "bandera_local": "🇳🇱",
+      "bandera_visitante": "🇸🇪"
+    },
+    {
+      "id": "G-F2-F3",
+      "fase": "grupos",
+      "grupo": "F",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Japón",
+      "visitante": "Túnez",
+      "bandera_local": "🇯🇵",
+      "bandera_visitante": "🇹🇳"
+    },
+    {
+      "id": "G-G1-G2",
+      "fase": "grupos",
+      "grupo": "G",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Bélgica",
+      "visitante": "Egipto",
+      "bandera_local": "🇧🇪",
+      "bandera_visitante": "🇪🇬"
+    },
+    {
+      "id": "G-G3-G4",
+      "fase": "grupos",
+      "grupo": "G",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Irán",
+      "visitante": "Nueva Zelanda",
+      "bandera_local": "🇮🇷",
+      "bandera_visitante": "🇳🇿"
+    },
+    {
+      "id": "G-G1-G3",
+      "fase": "grupos",
+      "grupo": "G",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Bélgica",
+      "visitante": "Irán",
+      "bandera_local": "🇧🇪",
+      "bandera_visitante": "🇮🇷"
+    },
+    {
+      "id": "G-G2-G4",
+      "fase": "grupos",
+      "grupo": "G",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Egipto",
+      "visitante": "Nueva Zelanda",
+      "bandera_local": "🇪🇬",
+      "bandera_visitante": "🇳🇿"
+    },
+    {
+      "id": "G-G1-G4",
+      "fase": "grupos",
+      "grupo": "G",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Bélgica",
+      "visitante": "Nueva Zelanda",
+      "bandera_local": "🇧🇪",
+      "bandera_visitante": "🇳🇿"
+    },
+    {
+      "id": "G-G2-G3",
+      "fase": "grupos",
+      "grupo": "G",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Egipto",
+      "visitante": "Irán",
+      "bandera_local": "🇪🇬",
+      "bandera_visitante": "🇮🇷"
+    },
+    {
+      "id": "G-H1-H2",
+      "fase": "grupos",
+      "grupo": "H",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "España",
+      "visitante": "Cabo Verde",
+      "bandera_local": "🇪🇸",
+      "bandera_visitante": "🇨🇻"
+    },
+    {
+      "id": "G-H3-H4",
+      "fase": "grupos",
+      "grupo": "H",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Arabia Saudí",
+      "visitante": "Uruguay",
+      "bandera_local": "🇸🇦",
+      "bandera_visitante": "🇺🇾"
+    },
+    {
+      "id": "G-H1-H3",
+      "fase": "grupos",
+      "grupo": "H",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "España",
+      "visitante": "Arabia Saudí",
+      "bandera_local": "🇪🇸",
+      "bandera_visitante": "🇸🇦"
+    },
+    {
+      "id": "G-H2-H4",
+      "fase": "grupos",
+      "grupo": "H",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Cabo Verde",
+      "visitante": "Uruguay",
+      "bandera_local": "🇨🇻",
+      "bandera_visitante": "🇺🇾"
+    },
+    {
+      "id": "G-H1-H4",
+      "fase": "grupos",
+      "grupo": "H",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "España",
+      "visitante": "Uruguay",
+      "bandera_local": "🇪🇸",
+      "bandera_visitante": "🇺🇾"
+    },
+    {
+      "id": "G-H2-H3",
+      "fase": "grupos",
+      "grupo": "H",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Cabo Verde",
+      "visitante": "Arabia Saudí",
+      "bandera_local": "🇨🇻",
+      "bandera_visitante": "🇸🇦"
+    },
+    {
+      "id": "G-I1-I2",
+      "fase": "grupos",
+      "grupo": "I",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Francia",
+      "visitante": "Senegal",
+      "bandera_local": "🇫🇷",
+      "bandera_visitante": "🇸🇳"
+    },
+    {
+      "id": "G-I3-I4",
+      "fase": "grupos",
+      "grupo": "I",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Noruega",
+      "visitante": "Irak",
+      "bandera_local": "🇳🇴",
+      "bandera_visitante": "🇮🇶"
+    },
+    {
+      "id": "G-I1-I3",
+      "fase": "grupos",
+      "grupo": "I",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Francia",
+      "visitante": "Noruega",
+      "bandera_local": "🇫🇷",
+      "bandera_visitante": "🇳🇴"
+    },
+    {
+      "id": "G-I2-I4",
+      "fase": "grupos",
+      "grupo": "I",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Senegal",
+      "visitante": "Irak",
+      "bandera_local": "🇸🇳",
+      "bandera_visitante": "🇮🇶"
+    },
+    {
+      "id": "G-I1-I4",
+      "fase": "grupos",
+      "grupo": "I",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Francia",
+      "visitante": "Irak",
+      "bandera_local": "🇫🇷",
+      "bandera_visitante": "🇮🇶"
+    },
+    {
+      "id": "G-I2-I3",
+      "fase": "grupos",
+      "grupo": "I",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Senegal",
+      "visitante": "Noruega",
+      "bandera_local": "🇸🇳",
+      "bandera_visitante": "🇳🇴"
+    },
+    {
+      "id": "G-J1-J2",
+      "fase": "grupos",
+      "grupo": "J",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Argentina",
+      "visitante": "Argelia",
+      "bandera_local": "🇦🇷",
+      "bandera_visitante": "🇩🇿"
+    },
+    {
+      "id": "G-J3-J4",
+      "fase": "grupos",
+      "grupo": "J",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Austria",
+      "visitante": "Jordania",
+      "bandera_local": "🇦🇹",
+      "bandera_visitante": "🇯🇴"
+    },
+    {
+      "id": "G-J1-J3",
+      "fase": "grupos",
+      "grupo": "J",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Argentina",
+      "visitante": "Austria",
+      "bandera_local": "🇦🇷",
+      "bandera_visitante": "🇦🇹"
+    },
+    {
+      "id": "G-J2-J4",
+      "fase": "grupos",
+      "grupo": "J",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Argelia",
+      "visitante": "Jordania",
+      "bandera_local": "🇩🇿",
+      "bandera_visitante": "🇯🇴"
+    },
+    {
+      "id": "G-J1-J4",
+      "fase": "grupos",
+      "grupo": "J",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Argentina",
+      "visitante": "Jordania",
+      "bandera_local": "🇦🇷",
+      "bandera_visitante": "🇯🇴"
+    },
+    {
+      "id": "G-J2-J3",
+      "fase": "grupos",
+      "grupo": "J",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Argelia",
+      "visitante": "Austria",
+      "bandera_local": "🇩🇿",
+      "bandera_visitante": "🇦🇹"
+    },
+    {
+      "id": "G-K1-K2",
+      "fase": "grupos",
+      "grupo": "K",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Portugal",
+      "visitante": "Colombia",
+      "bandera_local": "🇵🇹",
+      "bandera_visitante": "🇨🇴"
+    },
+    {
+      "id": "G-K3-K4",
+      "fase": "grupos",
+      "grupo": "K",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Uzbekistán",
+      "visitante": "RD Congo",
+      "bandera_local": "🇺🇿",
+      "bandera_visitante": "🇨🇩"
+    },
+    {
+      "id": "G-K1-K3",
+      "fase": "grupos",
+      "grupo": "K",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Portugal",
+      "visitante": "Uzbekistán",
+      "bandera_local": "🇵🇹",
+      "bandera_visitante": "🇺🇿"
+    },
+    {
+      "id": "G-K2-K4",
+      "fase": "grupos",
+      "grupo": "K",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Colombia",
+      "visitante": "RD Congo",
+      "bandera_local": "🇨🇴",
+      "bandera_visitante": "🇨🇩"
+    },
+    {
+      "id": "G-K1-K4",
+      "fase": "grupos",
+      "grupo": "K",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Portugal",
+      "visitante": "RD Congo",
+      "bandera_local": "🇵🇹",
+      "bandera_visitante": "🇨🇩"
+    },
+    {
+      "id": "G-K2-K3",
+      "fase": "grupos",
+      "grupo": "K",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Colombia",
+      "visitante": "Uzbekistán",
+      "bandera_local": "🇨🇴",
+      "bandera_visitante": "🇺🇿"
+    },
+    {
+      "id": "G-L1-L2",
+      "fase": "grupos",
+      "grupo": "L",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Inglaterra",
+      "visitante": "Croacia",
+      "bandera_local": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "bandera_visitante": "🇭🇷"
+    },
+    {
+      "id": "G-L3-L4",
+      "fase": "grupos",
+      "grupo": "L",
+      "jornada": 1,
+      "fecha_aprox": "2026-06-11 / 2026-06-17",
+      "local": "Ghana",
+      "visitante": "Panamá",
+      "bandera_local": "🇬🇭",
+      "bandera_visitante": "🇵🇦"
+    },
+    {
+      "id": "G-L1-L3",
+      "fase": "grupos",
+      "grupo": "L",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Inglaterra",
+      "visitante": "Ghana",
+      "bandera_local": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "bandera_visitante": "🇬🇭"
+    },
+    {
+      "id": "G-L2-L4",
+      "fase": "grupos",
+      "grupo": "L",
+      "jornada": 2,
+      "fecha_aprox": "2026-06-15 / 2026-06-22",
+      "local": "Croacia",
+      "visitante": "Panamá",
+      "bandera_local": "🇭🇷",
+      "bandera_visitante": "🇵🇦"
+    },
+    {
+      "id": "G-L1-L4",
+      "fase": "grupos",
+      "grupo": "L",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Inglaterra",
+      "visitante": "Panamá",
+      "bandera_local": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "bandera_visitante": "🇵🇦"
+    },
+    {
+      "id": "G-L2-L3",
+      "fase": "grupos",
+      "grupo": "L",
+      "jornada": 3,
+      "fecha_aprox": "2026-06-21 / 2026-06-27",
+      "local": "Croacia",
+      "visitante": "Ghana",
+      "bandera_local": "🇭🇷",
+      "bandera_visitante": "🇬🇭"
+    },
+    {
+      "id": "R32-01",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-01 L)",
+      "visitante": "Por definir (R32-01 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-02",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-02 L)",
+      "visitante": "Por definir (R32-02 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-03",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-03 L)",
+      "visitante": "Por definir (R32-03 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-04",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-04 L)",
+      "visitante": "Por definir (R32-04 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-05",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-05 L)",
+      "visitante": "Por definir (R32-05 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-06",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-06 L)",
+      "visitante": "Por definir (R32-06 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-07",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-07 L)",
+      "visitante": "Por definir (R32-07 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-08",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-08 L)",
+      "visitante": "Por definir (R32-08 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-09",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-09 L)",
+      "visitante": "Por definir (R32-09 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-10",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-10 L)",
+      "visitante": "Por definir (R32-10 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-11",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-11 L)",
+      "visitante": "Por definir (R32-11 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-12",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-12 L)",
+      "visitante": "Por definir (R32-12 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-13",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-13 L)",
+      "visitante": "Por definir (R32-13 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-14",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-14 L)",
+      "visitante": "Por definir (R32-14 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-15",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-15 L)",
+      "visitante": "Por definir (R32-15 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R32-16",
+      "fase": "ronda_32",
+      "fecha_aprox": "2026-06-28 / 2026-07-03",
+      "local": "Por definir (R32-16 L)",
+      "visitante": "Por definir (R32-16 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-01",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-01 L)",
+      "visitante": "Por definir (R16-01 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-02",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-02 L)",
+      "visitante": "Por definir (R16-02 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-03",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-03 L)",
+      "visitante": "Por definir (R16-03 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-04",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-04 L)",
+      "visitante": "Por definir (R16-04 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-05",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-05 L)",
+      "visitante": "Por definir (R16-05 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-06",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-06 L)",
+      "visitante": "Por definir (R16-06 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-07",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-07 L)",
+      "visitante": "Por definir (R16-07 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "R16-08",
+      "fase": "octavos",
+      "fecha_aprox": "2026-07-04 / 2026-07-07",
+      "local": "Por definir (R16-08 L)",
+      "visitante": "Por definir (R16-08 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "QF-01",
+      "fase": "cuartos",
+      "fecha_aprox": "2026-07-09 / 2026-07-11",
+      "local": "Por definir (QF-01 L)",
+      "visitante": "Por definir (QF-01 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "QF-02",
+      "fase": "cuartos",
+      "fecha_aprox": "2026-07-09 / 2026-07-11",
+      "local": "Por definir (QF-02 L)",
+      "visitante": "Por definir (QF-02 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "QF-03",
+      "fase": "cuartos",
+      "fecha_aprox": "2026-07-09 / 2026-07-11",
+      "local": "Por definir (QF-03 L)",
+      "visitante": "Por definir (QF-03 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "QF-04",
+      "fase": "cuartos",
+      "fecha_aprox": "2026-07-09 / 2026-07-11",
+      "local": "Por definir (QF-04 L)",
+      "visitante": "Por definir (QF-04 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "SF-01",
+      "fase": "semifinales",
+      "fecha_aprox": "2026-07-14 / 2026-07-15",
+      "local": "Por definir (SF-01 L)",
+      "visitante": "Por definir (SF-01 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "SF-02",
+      "fase": "semifinales",
+      "fecha_aprox": "2026-07-14 / 2026-07-15",
+      "local": "Por definir (SF-02 L)",
+      "visitante": "Por definir (SF-02 V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "TER",
+      "fase": "tercer_puesto",
+      "fecha_aprox": "2026-07-18",
+      "local": "Por definir (TER L)",
+      "visitante": "Por definir (TER V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    },
+    {
+      "id": "FIN",
+      "fase": "final",
+      "fecha_aprox": "2026-07-19",
+      "local": "Por definir (FIN L)",
+      "visitante": "Por definir (FIN V)",
+      "bandera_local": "",
+      "bandera_visitante": ""
+    }
+  ],
+  "resultados": {},
+  "premios_reales": {
+    "_comentario": "Rellena al finalizar el torneo con el nombre exacto del ganador de cada premio.",
+    "mvp": "",
+    "goleador": "",
+    "portero": ""
+  },
+  "ranking": [
+    {
+      "alias": "Roman",
+      "avatar": "41_retro_robot_with_antenna_512.png",
+      "avatar_b64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAQAElEQVR4AezYTY7c1hUFYCJLyCCjBmQtoSeaZC2BJ16DV+NJkN1o0ktwAmgLzjRxyz9St7qqyOIj37vvfEEoq7tIvnu+WzEO8pdffvnlfy4GvgO+A74DvgO+A1nfgb8s/kOAAAECBAiECSyLAhC3coEJECBAgIAC4DtAgAABAgTiBJ4D+38AnhVcBAgQIEAgTEABCFu4uAQIECCQLvBbfgXgNwd/EiBAgACBKAEFIGrdwhIgQIBAusAf+RWAPyT8kwABAgQIBAkoAEHLFpUAAQIE0gW+5FcAvlj4GwECBAgQiBFQAGJWLSgBAgQIpAt8nV8B+FrD3wkQIECAQIiAAhCyaDEJECBAIF3gZX4F4KWHnwgQIECAQISAAhCxZiEJECBAIF3gdX4F4LWInwmcKPDw8H5Jvk6kdhQBAq8EFIBXIH4kQIAAAQLzCXybSAH41sRvCBAgQIDA9AIKwPQrFpAAAQIE0gXeyq8AvKXidwQIECBAYHIBBWDyBYtHgAABAukCb+dXAN528VsCBAgQIDC1gAIw9XqFI0CAAIF0gUv5FYBLMn5PgAABAgQmFlAAJl6uaAQIECCQLnA5vwJw2cYnBAgQIEBgWgEFYNrVCkaAAAEC6QLX8isA13R8RoAAAQIEJhVQACZdrFgECBAgkC5wPb8CcN3HpwQIECBAYEoBBWDKtQpFgAABAukCt/IrALeEfE5gYIGnp49Lz2tgGqMRIHBDQAG4AeRjAgQIECBQT+D2xArAbSN3ECBAgACB6QQUgOlWKhABAgQIpAusya8ArFFyDwECBAgQmExAAZhsoeIQIECAQLrAuvwKwDondxEgQIAAgakEFICp1ikMAQIECKQLrM2vAKyVch8BAgQIEJhIQAGYaJmiECBAgEC6wPr8CsB6K3cSIECAAIFpBBSAaVYpCAECBAikC2zJrwBs0XIvAQIECBCYREABmGSRYhAgQIBAusC2/ArANi93EyBAgACBKQQUgCnWKAQBAgQIpAtsza8AbBVzPwECBAgQmEBAAZhgiSIQIECAQLrA9vwKwHYzTxAgQIAAgfICCkD5FQpAgAABAukC9+RXAO5R8wwBAgQIECguoAAUX6DxCRAgQCBd4L78CsB9bp4iQIAAAQKlBRSA0uszPAECBAikC9ybXwG4V85zBAgQIECgsIACUHh5RidAgACBdIH78ysA99t5kgABAgQIlBVQAMquzuAECBAgkC6wJ78CsEfPswQIECBAoKiAAlB0ccYmQIAAgXSBffkVgH1+niZAgAABAiUFFICSazM0AQIECKQL7M2vAOwV9DyBjgKPjx+WnlfH6I4mQGCngAKwE9DjBAgQIEDgfIH9JyoA+w29gQABAgQIlBNQAMqtzMAECBAgkC7QIr8C0ELROwgQIECAQDEBBaDYwoxLgAABAukCbfIrAG0cvYUAAQIECJQSUABKrcuwBAgQIJAu0Cq/AtBK0nsIECBAgEAhAQWg0LKMSoAAAQLpAu3yKwDtLL2JAAECBAiUEVAAyqzKoAQIECCQLtAyvwLQUtO7CBAgQIBAEQEFoMiijEmAAAEC6QJt8ysAbT29jQABAgQIlBBQAEqsyZAECBAgkC7QOr8C0FrU+whsEPj06edlz7XhKLcSIEDghYAC8ILDDwQIECBAYESB9jMpAO1NvZEAAQIECAwvoAAMvyIDEiBAgEC6wBH5FYAjVL2TAAECBAgMLqAADL4g4xEgQIBAusAx+RWAY1y9lQABAgQIDC2gAAy9HsMRIECAQLrAUfkVgKNkvZcAAQIECAwsoAAMvByjESBAgEC6wHH5FYDjbL2ZAAECBAgMK6AADLsagxEgQIBAusCR+RWAI3W9mwABAgQIDCqgAAy6GGMRIECAQLrAsfkVgGN9vZ0AAQIECAwpoAAMuRZDESBAgEC6wNH5FYCjhb1/aIGHh/dL5Wto3BXD9bZfMaJbCEwroABMu1rBCBAgQKCuwPGTKwDHGzuBAAECBAgMJ6AADLcSAxEgQIBAusAZ+RWAM5SdQYAAAQIEBhNQAAZbiHEIECBAIF3gnPwKwDnOTiFAgAABAkMJKABDrcMwBAgQIJAucFZ+BeAsaecQIECAAIGBBBSAgZZhFAIECBBIFzgvvwJwnrWTCBAgQIDAMAIKwDCrMAgBAgQIpAucmV8BOFPbWQQIECBAYBABBWCQRRiDAAECBNIFzs2vAJzr7TQCBAgQIDCEgAIwxBoMQYAAAQLpAmfnVwDOFndeU4GHh/fLnmvvME9PH5fKV/X8e+ff8915fnbv+Z4n0FNAAeip72wCBAgQIPBZ4Pw/FIDzzZ1IgAABAgS6CygA3VdgAAIECBBIF+iRXwHooe5MAgQIECDQWUAB6LwAxxMgQIBAukCf/ApAH3enEiBAgACBrgIKQFd+hxMgQIBAukCv/ApAL3nnEiBAgACBjgIKQEd8RxMgQIBAukC//ApAP3snEyBAgACBbgIKQDd6BxMgQIBAukDP/ApAT31nEyBAgACBTgIKQCd4xxIgQIBAukDf/ApAX3+nEyBAgACBLgIKQBd2hxIgQIBAukDv/ApA7w2En//w8H7Zc+3le3r6uOy59p7f+/k92Z+fTZ9/z3e3xbO9/Z1fW0ABqL0/0xMgQIBASYH+QysA/XdgAgIECBAgcLqAAnA6uQMJECBAIF1ghPwKwAhbMAMBAgQIEDhZQAE4GdxxBAgQIJAuMEZ+BWCMPZiCAAECBAicKqAAnMrtMAIECBBIFxglvwIwyibMQYAAAQIEThRQAE7EdhQBAgQIpAuMk18BGGcXJiFAgAABAqcJKACnUTuIAAECBNIFRsqvAIy0DbMQIECAAIGTBBSAk6AdQ4AAAQLpAmPlVwDG2odpCBAgQIDAKQIKwCnMDiFAgACBdIHR8isAo22k2DwPD++XPdfeuE9PH5c9197zPV9bYM93p8WztfVMX11AAai+QfMTIECAQAGB8UZUAMbbiYkIECBAgMDhAgrA4cQOIECAAIF0gRHzKwAjbsVMBAgQIEDgYAEF4GBgrydAgACBdIEx8ysAY+7FVAQIECBA4FABBeBQXi8nQIAAgXSBUfMrAKNuxlwECBAgQOBAAQXgQFyvJkCAAIF0gXHzKwDj7sZkBAgQIEDgMAEF4DBaLyZAgACBdIGR8ysAI2/HbAQIECBA4CABBeAgWK8lQIAAgXSBsfMrAGPvx3QECBAgQOAQAQXgEFYvJUCAAIF0gdHzKwCjb2jy+Z6ePi57rsl5xCNAgMBhAgrAYbReTIAAAQK5AuMnVwDG35EJCRAgQIBAcwEFoDmpFxIgQIBAukCF/ApAhS2ZkQABAgQINBZQABqDeh0BAgQIpAvUyK8A1NiTKQkQIECAQFMBBaApp5cRIECAQLpAlfwKQJVNmZMAAQIECDQUUAAaYnoVAQIECKQL1MmvANTZlUkJECBAgEAzAQWgGaUXESBAgEC6QKX8CkClbZmVAAECBAg0ElAAGkF6DQECBAikC9TKrwDU2pdpCRAgQIBAEwEFoAmjlxAgQIBAukC1/ApAtY2ZlwABAgQINBBQABogegUBAgQIpAvUy68A1NuZiQkQIECAwG4BBWA3oRcQIECAQLpAxfwKQMWtmZkAAQIECOwUUAB2AnqcAAECBNIFauZXAGruzdQECBAgQGCXgAKwi8/DBAgQIJAuUDW/AlB1c+YmQIAAAQI7BBSAHXgeJUCAAIF0gbr5FYC6uzM5AQIECBC4W0ABuJvOgwQIECCQLlA5vwJQeXtmJ0CAAAECdwooAHfCeYwAAQIE0gVq51cAau/P9AQIECBA4C4BBeAuNg8RIECAQLpA9fwKQPUNmp8AAQIECNwhoADcgeYRAgQIEEgXqJ9fAai/QwkIECBAgMBmAQVgM5kHCBAgQCBdYIb8CsAMW5SBAAECBAhsFFAANoK5nQABAgTSBebIrwDMsUcpCBAgQIDAJgEFYBOXmwkQIEAgXWCW/ArALJuUgwABAgQIbBBQADZguZUAAQIE0gXmya8AzLNLSQgQIECAwGoBBWA1lRsJECBAIF1gpvwKwEzblIUAAQIECKwUUABWQrmNAAECBNIF5sqvAMy1T2kIECBAgMAqAQVgFZObCBAgQCBdYLb8CsBsG5Vnk8C7/3637LkeHz8se65Nw0548x7752f32D8/OyGpSARWCygAq6ncSIAAAQK5AvMlVwDm26lEBAgQIEDgpoACcJPIDQQIECCQLjBjfgVgxq3KRIAAAQIEbggoADeAfEyAAAEC6QJz5lcA5tyrVAQIECBA4KqAAnCVx4cECBAgkC4wa34FYNbNykWAAAECBK4IKABXcHxEgAABAukC8+ZXAObdrWQECBAgQOCigAJwkcYHBAgQIJAuMHN+BWDm7cpGgAABAgQuCCgAF2D8mgABAgTSBebOrwDMvV/pCBAgQIDAmwIKwJssfkmAAAEC6QKz51cAZt+wfFcF/vr3vy17rqsv9+FNgT32z8/ePMANBAhcFFAALtL4gAABAgRyBeZPrgDMv2MJCRAgQIDANwIKwDckfkGAAAEC6QIJ+RWAhC3LSIAAAQIEXgkoAK9A/EiAAAEC6QIZ+RWAjD1LSYAAAQIEXggoAC84/ECAAAEC6QIp+RWAlE3LSYAAAQIEvhJQAL7C8FcCBAgQSBfIya8A5OxaUgIECBAg8KeAAvAnhb8QIECAQLpAUn4FIGnbshIgQIAAgd8FFIDfIfyDAAECBNIFsvIrAFn7lpYAAQIECHwWUAA+M/iDAAECBNIF0vIrAGkbl5cAAQIECPwqoAD8iuC/BAgQIJAukJdfAcjbucQECBAgQGBRAHwJCBAgQCBeIBFAAUjcuswECBAgEC+gAMR/BQAQIEAgXSAzvwKQuXepCRAgQCBcQAEI/wKIT4AAgXSB1PwKQOrm5SZAgACBaAEFIHr9whMgQCBdIDe/ApC7e8kJECBAIFhAAQhevugECBBIF0jOrwAkb192AgQIEIgVUABiVy84AQIE0gWy8ysA2fuXngABAgRCBRSA0MWLTYAAgXSB9PwKQPo3IDz/09PHpef17h/fLclXT/vns8O//uKHCygA4V8A8QkQIJApILUC4DtAgAABAgQCBRSAwKWLTIAAgXQB+ZdFAfAtIECAAAECgQIKQODSRSZAgEC2gPTPAgrAs4KLAAECBAiECSgAYQsXlwABAukC8v8moAD85uBPAgQIECAQJaAARK1bWAIECKQLyP+HgALwh4R/EiBAgACBIAEFIGjZohIgQCBdQP4vAgrAFwt/I0CAAAECMQIKQMyqBSVAgEC6gPxfCygAX2v4OwECBAgQCBFQAEIWLSYBAgTSBeR/KaAAvPTw08kCj48flj3XyeM2P+4///r3knw1B/VCAgRWCygAq6ncSIAAAQJ1BUz+WkABeC3iZwIECBAgECCgAAQsWUQCBAikC8j/rYAC8K2J3xAgQIAAgekFFIDpVywgWYN25gAADSJJREFUAQIE0gXkf0tAAXhLxe8IECBAgMDkAgrA5AsWjwABAukC8r8toAC87eK3BAgQIEBgagEFYOr1CkeAAIF0AfkvCSgAl2T8ngABAgQITCygAEy8XNEIECCQLiD/ZQEF4LKNTwgQIECAwLQCCsC0qxWMAAEC6QLyXxNQAK7p+IwAAQIECEwqoABMulixCBAgkC4g/3UBBeC6j09vCHz69POy57rx+psfPz5+WHpeNwe8ccO7d++W5OsGz82Pe+6+xdk3A7qBwIECCsCBuF5NgAABAr0EnHtLQAG4JeRzAgQIECAwoYACMOFSRSJAgEC6gPy3BRSA20buIECAAAEC0wkoANOtVCACBAikC8i/RkABWKPkHgIECBAgMJmAAjDZQsUhQIBAuoD86wQUgHVO7iJAgAABAlMJKABTrVMYAgQIpAvIv1ZAAVgr5T4CBAgQIDCRgAIw0TJFIUCAQLqA/OsFFID1Vu4kQIAAAQLTCCgA06xSEAIECKQLyL9FQAHYouVeAgQIECAwiYACMMkixSBAgEC6gPzbBBSAbV7uJvBC4PHxw7LnevGywB/22D0/G0gmMoFmAgpAM0ovIkCAAIF+Ak7eKqAAbBVzPwECBAgQmEBAAZhgiSIQIEAgXUD+7QIKwHYzTxAgQIAAgfICCkD5FQpAgACBdAH57xFQAO5R8wwBAgQIECguoAAUX6DxCRAgkC4g/30CCsB9bp4iQIAAAQKlBRSA0uszPAECBNIF5L9XQAG4V85zBAgQIECgsIACUHh5RidAgEC6gPz3CygA99t5kgABAgQIlBVQAMquzuAECBBIF5B/j4ACsEfPswQIECBAoKiAAlB0ccYmQIBAuoD8+wQUgH1+5Z9+eHi/9Lz2Av7ww/dL5evHH39ckq/Ku2sx+97vf8//7T6fvXd+z/cVUAD6+judAAECBO4S8NBeAQVgr6DnCRAgQIBAQQEFoODSjEyAAIF0Afn3CygA+w29gQABAgQIlBNQAMqtzMAECBBIF5C/hYAC0ELROwgQIECAQDEBBaDYwoxLgACBdAH52wgoAG0cvYUAAQIECJQSUABKrcuwBAgQSBeQv5WAAtBK0nsIECBAgEAhAQWg0LKMSoAAgXQB+dsJKADtLL2JAAECBAiUEVAAyqzKoAQIEEgXkL+lgALQUtO7CBAgQIBAEQEFoMiijEmAAIF0AfnbCigAbT3j3vbDD98vPa84cIGnEuj5v53ns6fCFGazgAKwmcwDBAgQIHC+gBNbCygArUW9jwABAgQIFBBQAAosyYgECBBIF5C/vYAC0N7UGwkQIECAwPACCsDwKzIgAQIE0gXkP0JAAThC1TsJECBAgMDgAgrA4AsyHgECBNIF5D9GQAE4xtVbCRAgQIDA0AIKwNDrMRwBAgTSBeQ/SkABOErWewkQIECAwMACCsDAyzEaAQIE0gXkP05AATjO1psJECBAgMCwAgrAsKsxGAECBNIF5D9SQAE4Ute7CRAgQIDAoAIKwKCLMRYBAgTSBeQ/VkABONbX2wkQIECAwJACCsCQazEUAQIE0gXkP1pAATha2PsJECBAgMCAAgrAgEsxEgECBNIF5D9eQAE43tgJBAgQIEBgOAEFYLiVGIgAAQLpAvKfIaAAnKHsDAIECBAgMJiAAjDYQoxDgACBdAH5zxFQAM5xdgoBAgQIEBhKQAEYah2GIUCAQLqA/GcJKABnSTuHAAECBAgMJKAADLQMoxAgQCBdQP7zBBSA86ydRIAAAQIEhhFQAIZZhUEIECCQLiD/mQIKwJnaziJAgAABAoMIKACDLMIYBAgQSBeQ/1wBBeBcb6cRIECAAIEhBBSAIdZgCAIECKQLyH+2gAJwtrjzCBAgQIDAAAIKwABLMAIBAgTSBeQ/X0ABON/ciQQIECBAoLuAAtB9BQYgQIBAuoD8PQQUgB7qziRAgAABAp0FFIDOC3A8AQIE0gXk7yOgAPRxdyoBAgQIEOgqoAB05Xc4AQIE0gXk7yWgAPSSdy4BAgQIEOgooAB0xHc0AQIE0gXk7yegAPSzdzIBAgQIEOgmoAB0o3cwAQIE0gXk7ymgAPTUdzYBAgQIEOgkoAB0gncsAQIE0gXk7yugAPT1dzoBAgQIEOgioAB0YXcoAQIE0gXk7y2gAPTegPMJECBAgEAHAQWgA7ojCRAgkC4gf38BBaD/DkxAgAABAgROF1AATid3IAECBNIF5B9BQAEYYQtmIECAAAECJwsoACeDO44AAQLpAvKPIaAAjLEHUxAgQIAAgVMFFIBTuR1GgACBdAH5RxFQAEbZhDkIECBAgMCJAgrAidiOIkCAQLqA/OMIKADj7MIkBAgQIEDgNAEF4DRqBxEgQCBdQP6RBBSAkbZhFgIECBAgcJKAAnAStGMIECCQLiD/WAIKwFj7MA0BAgQIEDhFQAE4hdkhBAgQSBeQfzQBBWC0jZiHAAECBAicIKAAnIDsCAIECKQLyD+egAIw3k5MRIAAAQIEDhdQAA4ndgABAgTSBeQfUUABGHErZiJAgAABAgcLKAAHA3s9AQIE0gXkH1NAARhzL6YiQIAAAQKHCigAh/J6OQECBNIF5B9VQAEYdTPmIkCAAAECBwooAAfiejUBAgTSBeQfV0ABGHc3JiNAgAABAocJKACH0XoxAQIE0gXkH1lAARh5O2YjQIAAAQIHCSgAB8F6LQECBNIF5B9bQAEYez+mI0CAAAEChwgoAIeweikBAgTSBeQfXUABGH1D5iNAgAABAgcIKAAHoHolAQIE0gXkH19AARh/RyYkQIAAAQLNBRSA5qReSIAAgXQB+SsIKAAVtmRGAgQIECDQWEABaAzqdQQIEEgXkL+GgAJQY0+mJECAAAECTQUUgKacXkaAAIF0AfmrCCgAVTZlTgIECBAg0FBAAWiI6VUECBBIF5C/joACUGdXJiVAgAABAs0EFIBmlF5EgACBdAH5KwkoAJW2ZVYCBAgQINBIQAFoBOk1BAgQSBeQv5aAAlBrX6YlQIAAAQJNBBSAJoxeQoAAgXQB+asJKADVNmZeAgQIECDQQEABaIDoFQQIEEgXkL+egAJQb2cmJkCAAAECuwUUgN2EXkCAAIF0AfkrCigAFbdmZgIECBAgsFNAAdgJ6HECBAikC8hfU0ABqLk3UxMgQIAAgV0CCsAuPg8TIEAgXUD+qgIKQNXNmZsAAQIECOwQUAB24HmUAAEC6QLy1xVQAOruzuQECBAgQOBuAQXgbjoPEiBAIF1A/soCCkDl7ZmdAAECBAjcKaAA3AnnMQIECKQLyF9bQAGovb/u0//00z8XFwPfgZrfge7/AjFAVwEFoCu/wwkQIFBVwNzVBRSA6hs0PwECBAgQuENAAbgDzSMECBBIF5C/voACUH+HEhAgQIAAgc0CCsBmMg8QIEAgXUD+GQQUgBm2KAMBAgQIENgooABsBHM7AQIE0gXkn0NAAZhjj1IQIECAAIFNAgrAJi43EyBAIF1A/lkEFIBZNikHAQIECBDYIKAAbMByKwECBNIF5J9HQAGYZ5eSECBAgACB1QIKwGoqNxIgQCBdQP6ZBBSAmbYpCwECBAgQWCmgAKyEchsBAgTSBeSfS0ABmGufm9N8+vTz4mLgO+A7cM93YPO/cDwwlIACMNQ6DEOAAIFRBcw1m4ACMNtG5SFAgAABAisEFIAVSG4hQIBAuoD88wkoAPPtVCICBAgQIHBTQAG4SeQGAgQIpAvIP6OAAjDjVmUiQIAAAQI3BBSAG0A+JkCAQLqA/HMKKABz7lUqAgQIECBwVUABuMrjQwIECKQLyD+rgAIw62blIkCAAAECVwQUgCs4PiJAgEC6gPzzCigA8+5WMgIECBAgcFFAAbhI4wMCBAikC8g/s4ACMPN2ZSNAgAABAhcEFIALMH5NgACBdAH55xZQAOber3QECBAgQOBNAQXgTRa/JECAQLqA/LMLKACzb1g+AgQIECDwhoAC8AaKXxEgQCBdQP75BRSA+XcsIQECBAgQ+EZAAfiGxC8IECCQLiB/goACkLBlGQkQIECAwCsBBeAViB8JECCQLiB/hoACkLFnKQkQIECAwAsBBeAFhx8IECCQLiB/ioACkLJpOQkQIECAwFcCCsBXGP5KgACBdAH5cwQUgJxdS0qAAAECBP4UUAD+pPAXAgQIpAvInySgACRtW1YCBAgQIPC7gALwO4R/ECBAIF1A/iwBBSBr39ISIECAAIHPAgrAZwZ/ECBAIF1A/jQBBSBt4/ISIECAAIFfBRSAXxH8lwABAukC8ucJKAB5O5eYAAECBAgsCoAvAQECBOIFACQKKACJW5eZAAECBOIFFID4rwAAAgTSBeTPFFAAMvcuNQECBAiECygA4V8A8QkQSBeQP1VAAUjdvNwECBAgEC2gAESvX3gCBNIF5M8VUABydy85AQIECAQLKADByxedAIF0AfmTBRSA5O3LToAAAQKxAgpA7OoFJ0AgXUD+bIH/AwAA///P/fiDAAAABklEQVQDAPtRYQ9mIvk4AAAAAElFTkSuQmCC",
+      "archivo": "plantilla_Roman.xlsx",
+      "modified": "2026-06-08T15:48:43+00:00",
+      "puntos_grupos": 0,
+      "puntos_elim": 0,
+      "puntos_quien_pasa": 0,
+      "puntos_especiales": 0,
+      "total": 0,
+      "pleno": 0,
+      "tendencia": 0,
+      "quien_pasa": 0,
+      "valido_grupos": true,
+      "valido_elim": false,
+      "premios_apostados": {
+        "mvp": "Lamine Yamal",
+        "goleador": "Mikel Oyarzabal",
+        "portero": "Mike Maignan"
+      },
+      "premios_aciertos": [],
+      "detalle": [
+        {
+          "id": "G-A1-A2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A3-A4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A3",
+          "apostado": [
+            2,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A4",
+          "apostado": [
+            0,
+            3
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B3-B4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B4",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C3-C4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C4",
+          "apostado": [
+            4,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C4",
+          "apostado": [
+            5,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D2",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D3-D4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D4",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D3",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E2",
+          "apostado": [
+            4,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E3-E4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E4",
+          "apostado": [
+            0,
+            3
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E4",
+          "apostado": [
+            2,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F2",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F3-F4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F3",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G2",
+          "apostado": [
+            2,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G3-G4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G3",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G3",
+          "apostado": [
+            3,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H2",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H3-H4",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H4",
+          "apostado": [
+            1,
+            3
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H4",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I2",
+          "apostado": [
+            2,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I3-I4",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I3",
+          "apostado": [
+            2,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I4",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I4",
+          "apostado": [
+            4,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J3-J4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J4",
+          "apostado": [
+            3,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K2",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K3-K4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K3",
+          "apostado": [
+            4,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K3",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L2",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L3-L4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L4",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L4",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-09",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-10",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-11",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-12",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-13",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-14",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-15",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-16",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "TER",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "FIN",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        }
+      ]
+    },
+    {
+      "alias": "Dani Valledor",
+      "avatar": "13_viking_with_horned_helmet_512.png",
+      "avatar_b64": "data:image/png;base64,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",
+      "archivo": "plantilla_DaniV.xlsx",
+      "modified": "2026-06-08T15:55:28+00:00",
+      "puntos_grupos": 0,
+      "puntos_elim": 0,
+      "puntos_quien_pasa": 0,
+      "puntos_especiales": 0,
+      "total": 0,
+      "pleno": 0,
+      "tendencia": 0,
+      "quien_pasa": 0,
+      "valido_grupos": true,
+      "valido_elim": false,
+      "premios_apostados": {
+        "mvp": "Lamine",
+        "goleador": "Mbappe",
+        "portero": "Pickford"
+      },
+      "premios_aciertos": [],
+      "detalle": [
+        {
+          "id": "G-A1-A2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A3-A4",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A4",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A3",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B2",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B3-B4",
+          "apostado": [
+            0,
+            3
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B3",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C2",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C3-C4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C4",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C3",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D2",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D3-D4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D4",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D4",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E2",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E3-E4",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E3",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E3",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F2",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F3-F4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G3-G4",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G4",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G3",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H2",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H3-H4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I3-I4",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I3",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J2",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J3-J4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J4",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K3-K4",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K4",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K3",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L2",
+          "apostado": [
+            0,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L3-L4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L3",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L4",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-09",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-10",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-11",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-12",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-13",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-14",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-15",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-16",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "TER",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "FIN",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        }
+      ]
+    },
+    {
+      "alias": "Antonio",
+      "avatar": "31_cat_with_bowbie_512.png",
+      "avatar_b64": "data:image/png;base64,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",
+      "archivo": "plantilla_Antonio.xlsx",
+      "modified": "2026-06-08T15:48:33+00:00",
+      "puntos_grupos": 0,
+      "puntos_elim": 0,
+      "puntos_quien_pasa": 0,
+      "puntos_especiales": 0,
+      "total": 0,
+      "pleno": 0,
+      "tendencia": 0,
+      "quien_pasa": 0,
+      "valido_grupos": true,
+      "valido_elim": false,
+      "premios_apostados": {},
+      "premios_aciertos": [],
+      "detalle": [
+        {
+          "id": "G-A1-A2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A3-A4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A3",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B2",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B3-B4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C3-C4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C4",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D3-D4",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D4",
+          "apostado": [
+            2,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D3",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E2",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E3-E4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E4",
+          "apostado": [
+            0,
+            3
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F3-F4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G3-G4",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G3",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H2",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H3-H4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H3",
+          "apostado": [
+            3,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H4",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I3-I4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I4",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I3",
+          "apostado": [
+            1,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J3-J4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J3",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J4",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J3",
+          "apostado": [
+            0,
+            2
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K2",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K3-K4",
+          "apostado": [
+            1,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K4",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K3",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L2",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L3-L4",
+          "apostado": [
+            2,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L3",
+          "apostado": [
+            3,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L4",
+          "apostado": [
+            2,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L4",
+          "apostado": [
+            4,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L3",
+          "apostado": [
+            1,
+            0
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-09",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-10",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-11",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-12",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-13",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-14",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-15",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-16",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "TER",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "FIN",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        }
+      ]
+    },
+    {
+      "alias": "Marc",
+      "avatar": "36_frog_with_crown_512.png",
+      "avatar_b64": "data:image/png;base64,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",
+      "archivo": "plantilla_Marc.xlsx",
+      "modified": "2026-06-08T15:00:38+00:00",
+      "puntos_grupos": 0,
+      "puntos_elim": 0,
+      "puntos_quien_pasa": 0,
+      "puntos_especiales": 0,
+      "total": 0,
+      "pleno": 0,
+      "tendencia": 0,
+      "quien_pasa": 0,
+      "valido_grupos": true,
+      "valido_elim": false,
+      "premios_apostados": {
+        "mvp": "Cristiano",
+        "goleador": "Crsitiano",
+        "portero": "Cristiano"
+      },
+      "premios_aciertos": [],
+      "detalle": [
+        {
+          "id": "G-A1-A2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A3-A4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A1-A4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-A2-A3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B3-B4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B1-B4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-B2-B3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C3-C4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C1-C4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-C2-C3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D3-D4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D1-D4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-D2-D3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E3-E4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E1-E4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-E2-E3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F3-F4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F1-F4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-F2-F3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G3-G4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G1-G4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-G2-G3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H3-H4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H1-H4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-H2-H3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I3-I4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I1-I4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-I2-I3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J3-J4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J1-J4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-J2-J3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K3-K4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K1-K4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-K2-K3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L2",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L3-L4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L1-L4",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "G-L2-L3",
+          "apostado": [
+            0,
+            1
+          ],
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-09",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-10",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-11",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-12",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-13",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-14",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-15",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R32-16",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-05",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-06",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-07",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "R16-08",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-03",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "QF-04",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-01",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "SF-02",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "TER",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        },
+        {
+          "id": "FIN",
+          "apostado": null,
+          "real": null,
+          "puntos": 0,
+          "tipo": "pendiente",
+          "quien_pasa_ap": null,
+          "quien_pasa_real": null,
+          "pts_quien_pasa": 0
+        }
+      ]
+    }
+  ]
+}
