@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dashboard/data.json dashboard/index.html dashboard/dashboard.html
+          git add dashboard/data.json dashboard/index.html dashboard/dashboard.html data/avatares.json
           git diff --staged --quiet && echo "Sin cambios" || \
             git commit -m "sync: pronosticos del formulario $(date -u '+%Y-%m-%d %H:%M UTC')" && \
             git push
