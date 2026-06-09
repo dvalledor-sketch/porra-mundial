@@ -5,6 +5,7 @@
 <title>Porra del Mundial 2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
@@ -760,6 +761,7 @@ function renderTodo() {
     $("#hdr-fase").textContent = `${jugados} / 104 partidos`;
   }
   renderKPIs(); renderPodio(); renderRanking(); renderDetalle();
+  if(typeof twemoji !== "undefined") twemoji.parse(document.body, {folder:"svg",ext:".svg"});
 }
 
 function renderKPIs() {
