@@ -708,8 +708,10 @@ async function cargarRankingDesdeSB(data) {
       if (ap && re && ap === re) { puntos_especiales += 15; premios_aciertos.push(label); }
     }
 
+    // Rescatar avatar del PRECARGA si existe
+    const cached = (data.ranking||[]).find(r => r.alias.toLowerCase() === part.alias.toLowerCase());
     return {
-      alias: part.alias, avatar: "", avatar_b64: "", archivo: "", modified: part.updated_at,
+      alias: part.alias, avatar: cached?.avatar||"", avatar_b64: cached?.avatar_b64||"", archivo: "", modified: part.updated_at,
       puntos_grupos, puntos_elim, puntos_quien_pasa: 0, puntos_especiales,
       total: puntos_grupos + puntos_elim + puntos_especiales,
       pleno, tendencia, quien_pasa: 0, valido_grupos: true, valido_elim: false,
