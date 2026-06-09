@@ -27,6 +27,8 @@ REALES_ELIM = RAIZ / "data" / "resultados_reales_elim.xlsx"
 
 API_BASE    = "https://v3.football.api-sports.io"
 API_KEY     = os.environ.get("FOOTBALL_API_KEY", "")
+WC_LEAGUE   = 1      # FIFA World Cup — id fijo según docs oficiales
+WC_SEASON   = 2026
 
 # ── mapeo nombre API (inglés) → nombre interno (español) ──────────────────────
 NOMBRES: dict[str, str] = {
@@ -76,16 +78,10 @@ def _api_get(endpoint: str, params: dict) -> dict:
     return r.json()
 
 
-def _find_wc_league() -> int | None:
-    """Busca el league_id del Mundial 2026 en API-Football."""
-    data = _api_get("leagues", {"code": "WC", "season": "2026"})
-    leagues = data.get("response", [])
-    if not leagues:
-        print("⚠️  No se encontró el Mundial 2026 en la API todavía.")
-        return None
-    league_id = leagues[0]["league"]["id"]
-    print(f"✓ Mundial 2026 encontrado — league_id={league_id}")
-    return league_id
+def _find_wc_league() -> int:
+    """Devuelve el league_id del Mundial 2026 (siempre 1 según docs oficiales)."""
+    print(f"✓ Mundial 2026 — league_id={WC_LEAGUE}, season={WC_SEASON}")
+    return WC_LEAGUE
 
 
 def _build_match_index() -> dict[tuple[str, str], str]:
@@ -99,7 +95,7 @@ def _get_fixtures(league_id: int) -> list[dict]:
     """Devuelve todos los partidos del Mundial 2026 ya jugados."""
     data = _api_get(
         "fixtures",
-        {"league": league_id, "season": "2026", "status": "FT-AET-PEN"},
+        {"league": WC_LEAGUE, "season": WC_SEASON, "status": "FT-AET-PEN"},
     )
     return data.get("response", [])
 
@@ -150,9 +146,6 @@ def main() -> None:
 
     print("▸ Buscando Mundial 2026 en API-Football…")
     league_id = _find_wc_league()
-    if league_id is None:
-        sys.exit(0)
-
     print("▸ Descargando partidos terminados…")
     fixtures = _get_fixtures(league_id)
     print(f"  {len(fixtures)} partidos terminados")
@@ -163,8 +156,9 @@ def main() -> None:
     for fix in fixtures:
         home = _es(fix["teams"]["home"]["name"])
         away = _es(fix["teams"]["away"]["name"])
-        gl   = fix["score"]["fulltime"]["home"]
-        gv   = fix["score"]["fulltime"]["away"]
+        # goals.home/away es el campo estándar; score.fulltime como fallback
+        gl   = fix.get("goals", {}).get("home") or fix["score"]["fulltime"]["home"]
+        gv   = fix.get("goals", {}).get("away") or fix["score"]["fulltime"]["away"]
         if gl is None or gv is None:
             continue
         match_id = idx.get((home, away))
