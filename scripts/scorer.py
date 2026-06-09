@@ -539,7 +539,7 @@ def main():
         except Exception:
             pass
 
-        salida = {
+    salida = {
         "torneo": datos.get("torneo", "Mundial 2026"),
         "actualizado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "limites": limites,
