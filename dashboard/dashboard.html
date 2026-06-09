@@ -634,118 +634,22 @@ const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
 function esc(s){ return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]); }
 
-// ── Supabase (ranking en tiempo real) ────────────────────────────────
-const SB_URL = "https://iwicyguwsobdbsusxydx.supabase.co";
-const SB_KEY = "sb_publishable_Q8aBMLOXDNaqZgp-qmoZwA_5kj79yWp";
-
-async function sbGet(table, select) {
-  const r = await fetch(`${SB_URL}/rest/v1/${table}?select=${encodeURIComponent(select)}`, {
-    headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Accept: "application/json" }
-  });
-  if (!r.ok) throw new Error(`SB ${table}: ${r.status}`);
-  return r.json();
-}
-
-function calcTipo(apostado, real) {
-  if (!apostado) return "no_apostado";
-  if (!real) return "pendiente";
-  const [al, av] = apostado, [rl, rv] = real;
-  if (al === rl && av === rv) return "pleno";
-  if (Math.sign(al - av) === Math.sign(rl - rv)) return "tendencia";
-  return "fallo";
-}
-
-const FASES_ELIM = new Set(["ronda_32","octavos","cuartos","semifinales","tercer_puesto","final"]);
-const PTS_MAP = { pleno: 3, tendencia: 2, fallo: 0 };
-
-async function cargarRankingDesdeSB(data) {
-  const [parts, grupos, premios] = await Promise.all([
-    sbGet("porra_participantes", "alias_norm,alias,updated_at"),
-    sbGet("porra_pronosticos_grupos", "alias_norm,match_id,goles_local,goles_visitante"),
-    sbGet("porra_premios", "alias_norm,mvp,goleador,portero")
-  ]);
-
-  const apByAlias = {};
-  for (const g of grupos) {
-    if (!apByAlias[g.alias_norm]) apByAlias[g.alias_norm] = {};
-    apByAlias[g.alias_norm][g.match_id] = [g.goles_local, g.goles_visitante];
-  }
-  const premByAlias = {};
-  for (const p of premios) premByAlias[p.alias_norm] = p;
-
-  const premiosReales = data.premios_reales || {};
-  const resultados = data.resultados || {};
-  const partidos = data.partidos || [];
-
-  const ranking = parts.map(part => {
-    const an = part.alias_norm;
-    const apuestas = apByAlias[an] || {};
-    const prem = premByAlias[an] || {};
-
-    const detalle = partidos.map(p => {
-      const apostado = apuestas[p.id] || null;
-      const real = resultados[p.id] || null;
-      const tipo = calcTipo(apostado, real);
-      return { id: p.id, apostado, real, puntos: PTS_MAP[tipo] || 0, tipo,
-               quien_pasa_ap: null, quien_pasa_real: null, pts_quien_pasa: 0 };
-    });
-
-    let puntos_grupos = 0, puntos_elim = 0, pleno = 0, tendencia = 0;
-    for (const d of detalle) {
-      if (d.tipo === "pleno" || d.tipo === "tendencia") {
-        const partido = partidos.find(p => p.id === d.id);
-        const isElim = partido && FASES_ELIM.has(partido.fase);
-        const pts = PTS_MAP[d.tipo];
-        if (isElim) puntos_elim += pts; else puntos_grupos += pts;
-        if (d.tipo === "pleno") pleno++; else tendencia++;
-      }
-    }
-
-    let puntos_especiales = 0, premios_aciertos = [];
-    for (const [key, label] of [["mvp","MVP"],["goleador","Goleador"],["portero","Portero"]]) {
-      const ap = (prem[key]||"").trim().toLowerCase();
-      const re = (premiosReales[key]||"").trim().toLowerCase();
-      if (ap && re && ap === re) { puntos_especiales += 15; premios_aciertos.push(label); }
-    }
-
-    return {
-      alias: part.alias, avatar: "", avatar_b64: "", archivo: "", modified: part.updated_at,
-      puntos_grupos, puntos_elim, puntos_quien_pasa: 0, puntos_especiales,
-      total: puntos_grupos + puntos_elim + puntos_especiales,
-      pleno, tendencia, quien_pasa: 0, valido_grupos: true, valido_elim: false,
-      premios_apostados: { mvp: prem.mvp||"", goleador: prem.goleador||"", portero: prem.portero||"" },
-      premios_aciertos, detalle
-    };
-  });
-
-  ranking.sort((a, b) => b.total - a.total || a.alias.localeCompare(b.alias));
-  return ranking;
-}
-
 // ── Carga de datos ───────────────────────────────────────────────────
 async function cargar() {
-  let base;
   if (window.PRECARGA && typeof window.PRECARGA === "object") {
-    base = window.PRECARGA;
-  } else {
-    try {
-      const r = await fetch("data.json?ts=" + Date.now(), {cache:"no-store"});
-      base = await r.json();
-    } catch(e) {
-      DATA = {ranking:[],partidos:[],resultados:{},actualizado:null,torneo:"Mundial 2026"};
-      $("#hdr-sub").innerHTML = "⚠ Abre <b>dashboard.html</b> (generado por Actualizar_Ranking) para ver los datos sin servidor.";
-      return;
-    }
+    DATA = window.PRECARGA;
+    $("#hdr-sub").textContent = `${DATA.torneo} · actualizado ${DATA.actualizado || "—"} · (standalone)`;
+    renderTodo(); return;
   }
-  DATA = {...base, ranking:[]};
-  $("#hdr-sub").textContent = `${DATA.torneo} · actualizado ${DATA.actualizado || "—"}`;
-  renderTodo();
   try {
-    DATA.ranking = await cargarRankingDesdeSB(DATA);
+    const r = await fetch("data.json?ts=" + Date.now(), {cache:"no-store"});
+    DATA = await r.json();
   } catch(e) {
-    console.warn("Supabase no disponible, usando ranking del caché:", e);
-    DATA.ranking = base.ranking || [];
+    DATA = {ranking:[],partidos:[],resultados:{},actualizado:null,torneo:"Mundial 2026"};
+    $("#hdr-sub").innerHTML = "⚠ Abre <b>dashboard.html</b> (generado por Actualizar_Ranking) para ver los datos sin servidor.";
+    return;
   }
+  $("#hdr-sub").textContent = `${DATA.torneo} · actualizado ${DATA.actualizado || "—"}`;
   renderTodo();
 }
 
