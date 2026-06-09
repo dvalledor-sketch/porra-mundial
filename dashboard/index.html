@@ -658,7 +658,7 @@ function calcTipo(apostado, real) {
 const FASES_ELIM = new Set(["ronda_32","octavos","cuartos","semifinales","tercer_puesto","final"]);
 const PTS_MAP = { pleno: 3, tendencia: 2, fallo: 0 };
 
-async function cargarRankingDesdeSB(data) {
+async function cargarRankingDesdeSB(data, cachedRanking=[]) {
   const [parts, grupos, premios] = await Promise.all([
     sbGet("porra_participantes", "alias_norm,alias,updated_at"),
     sbGet("porra_pronosticos_grupos", "alias_norm,match_id,goles_local,goles_visitante"),
@@ -709,7 +709,7 @@ async function cargarRankingDesdeSB(data) {
     }
 
     // Rescatar avatar del PRECARGA si existe
-    const cached = (data.ranking||[]).find(r => r.alias.toLowerCase() === part.alias.toLowerCase());
+    const cached = cachedRanking.find(r => r.alias.toLowerCase() === part.alias.toLowerCase());
     return {
       alias: part.alias, avatar: cached?.avatar||"", avatar_b64: cached?.avatar_b64||"", archivo: "", modified: part.updated_at,
       puntos_grupos, puntos_elim, puntos_quien_pasa: 0, puntos_especiales,
@@ -743,7 +743,7 @@ async function cargar() {
   $("#hdr-sub").textContent = `${DATA.torneo} · actualizado ${DATA.actualizado || "—"}`;
   renderTodo();
   try {
-    DATA.ranking = await cargarRankingDesdeSB(DATA);
+    DATA.ranking = await cargarRankingDesdeSB(DATA, base.ranking||[]);
   } catch(e) {
     console.warn("Supabase no disponible, usando ranking del caché:", e);
     DATA.ranking = base.ranking || [];
