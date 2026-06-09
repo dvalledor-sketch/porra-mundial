@@ -180,17 +180,27 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
 
 <div class="subnav">
   <div class="in">
+    <a href="#buscar">Buscar selección</a>
     <a href="#cuenta">Cuenta atrás</a>
     <a href="#sedes">Sedes</a>
     <a href="#formato">Formato</a>
     <a href="#grupos">Grupos</a>
     <a href="#calendario">Calendario</a>
     <a href="#cuadro">Eliminatorias</a>
-    <a href="#buscar">Buscar selección</a>
   </div>
 </div>
 
 <div class="wrap">
+
+  <!-- BUSCAR -->
+  <section id="buscar">
+    <h2 class="sec"><span class="ic">🔎</span> Buscar selección</h2>
+    <p class="lead">Escribe una selección para ver su grupo y sus 3 partidos de la fase de grupos, con <b>fecha, hora (España) y sede</b>. Ordenados por fecha.</p>
+    <div class="search">
+      <input id="q" type="text" placeholder="Ej: España, Argentina, Brasil…" autocomplete="off">
+    </div>
+    <div id="search-res"></div>
+  </section>
 
   <!-- CUENTA ATRÁS -->
   <section id="cuenta">
@@ -257,16 +267,6 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
     <h2 class="sec"><span class="ic">🏆</span> Eliminatorias</h2>
     <p class="lead">Eliminación directa desde la Ronda de 32 hasta la final.</p>
     <div class="bracket" id="bracket"></div>
-  </section>
-
-  <!-- BUSCAR -->
-  <section id="buscar">
-    <h2 class="sec"><span class="ic">🔎</span> Buscar selección</h2>
-    <p class="lead">Escribe una selección para ver su grupo y sus 3 partidos de la fase de grupos, con <b>fecha, hora (España) y sede</b>. Ordenados por fecha.</p>
-    <div class="search">
-      <input id="q" type="text" placeholder="Ej: España, Argentina, Brasil…" autocomplete="off">
-    </div>
-    <div id="search-res"></div>
   </section>
 
   <footer>
