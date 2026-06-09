@@ -174,6 +174,61 @@ def main() -> None:
     total    = n_grupos + n_elim
     print(f"✓ Excel actualizado — {total} celdas nuevas")
 
+    print("▸ Descargando cuadro eliminatorio…")
+    bracket = _fetch_bracket(league_id)
+    import datetime as _dt
+    BRACKET_F.write_text(
+        json.dumps({"updated": _dt.datetime.utcnow().isoformat(), "rounds": bracket},
+                   ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+    print(f"✓ bracket.json actualizado")
+
 
 if __name__ == "__main__":
     main()
+
+
+# ── Bracket (eliminatorias) ───────────────────────────────────────────────────
+BRACKET_F = RAIZ / "data" / "bracket.json"
+
+ROUND_MAP: dict[str, str] = {
+    "ronda_32":      "Round of 32",
+    "octavos":       "Round of 16",
+    "cuartos":       "Quarter-finals",
+    "semifinales":   "Semi-finals",
+    "tercer_puesto": "3rd Place Final",
+    "final":         "Final",
+}
+
+ROUND_ORDER = ["ronda_32", "octavos", "cuartos", "semifinales", "final", "tercer_puesto"]
+
+
+def _fetch_bracket(league_id: int) -> dict[str, list[dict]]:
+    """Descarga los fixtures de todas las rondas eliminatorias."""
+    bracket: dict[str, list[dict]] = {}
+    for fase, api_round in ROUND_MAP.items():
+        try:
+            data = _api_get("fixtures", {
+                "league": league_id,
+                "season": WC_SEASON,
+                "round":  api_round,
+            })
+            fixes = data.get("response", [])
+            bracket[fase] = [
+                {
+                    "fixture_id": f["fixture"]["id"],
+                    "date":       f["fixture"]["date"],
+                    "status":     f["fixture"]["status"]["short"],
+                    "team1":      _es(f["teams"]["home"]["name"]),
+                    "team2":      _es(f["teams"]["away"]["name"]),
+                    "score1":     (f.get("goals") or {}).get("home") or f["score"]["fulltime"]["home"],
+                    "score2":     (f.get("goals") or {}).get("away") or f["score"]["fulltime"]["away"],
+                }
+                for f in fixes
+            ]
+            print(f"  {fase}: {len(fixes)} partidos")
+        except Exception as e:
+            print(f"  ⚠️  Error en {fase}: {e}")
+            bracket[fase] = []
+    return bracket

@@ -530,7 +530,16 @@ def main():
             _data = _base64.b64encode(_fpath.read_bytes()).decode("ascii")
             _avatar_b64_cache[_alias] = f"data:image/png;base64,{_data}"
 
-    salida = {
+    # ── Bracket (eliminatorias) ──────────────────────────────────
+    _bracket_f = RAIZ / "data" / "bracket.json"
+    _bracket: dict = {}
+    if _bracket_f.exists():
+        try:
+            _bracket = json.loads(_bracket_f.read_text(encoding="utf-8")).get("rounds", {})
+        except Exception:
+            pass
+
+        salida = {
         "torneo": datos.get("torneo", "Mundial 2026"),
         "actualizado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "limites": limites,
@@ -543,6 +552,7 @@ def main():
         "partidos": partidos,
         "resultados": {k: list(v.real) if v.real else None for k, v in resultados.items()},
         "premios_reales": premios_reales,
+        "bracket": _bracket,
         "ranking": [
             {
                 "alias":             p.alias,
