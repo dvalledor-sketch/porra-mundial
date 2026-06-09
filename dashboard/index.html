@@ -9,29 +9,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
 
 :root {
-  --red:#e8001e; --red-dk:#aa0015; --red-glow:rgba(232,0,30,.55);
-  --blue:#2233cc; --blue-dk:#151a88; --blue-lt:#4466ff;
-  --navy:#060c20; --navy-mid:#0d1640;
-  --gold:#ffd700; --gold-dk:#cc8800; --gold-glow:rgba(255,215,0,.5);
-  --silver:#c0c0c0; --bronze:#cd7c2f;
-  --bg1:#000000; --bg2:#070c1e;
-  --card:rgba(10,18,80,.70); --card-hover:rgba(22,36,140,.80);
-  --border:rgba(232,0,30,.42); --border-hi:rgba(232,0,30,.85);
-  --text:#ffffff; --muted:#aabbee; --faint:#6677bb;
-  --green:#00dd55; --amber:#e8001e; --cyan:#44aaff; --purple:#cc44ff;
-  --green-bg:rgba(0,221,85,.16);   --green-fg:#66ffaa;
-  --amber-bg:rgba(232,0,30,.18);   --amber-fg:#ff8899;
-  --blue-bg:rgba(68,102,255,.18);  --blue-fg:#aabbff;
-  --gold-bg:rgba(255,215,0,.16);   --gold-fg:#ffe870;
-  --red-bg:rgba(232,0,30,.18);     --red-fg:#ff8899;
+  --red:#cc0000; --red-dk:#990000; --red-glow:rgba(204,0,0,.40);
+  --blue:#1a2c9e; --blue-dk:#0f1c6e; --blue-lt:#2840cc;
+  --gold:#ffd700; --gold-dk:#bb9900; --gold-glow:rgba(255,215,0,.5);
+  --silver:#888888; --bronze:#996633;
+  --bg1:#ffffff; --bg2:#f4f4f0;
+  --card:#ffffff; --card-hover:#fff5f5;
+  --border:rgba(26,44,158,.22); --border-hi:rgba(204,0,0,.65);
+  --text:#0d1433; --muted:#2840aa; --faint:#8899cc;
+  --green:#007733; --amber:#cc0000; --cyan:#1155cc; --purple:#7733cc;
+  --green-bg:rgba(0,119,51,.10);   --green-fg:#005522;
+  --amber-bg:rgba(204,0,0,.10);    --amber-fg:#990000;
+  --blue-bg:rgba(26,44,158,.10);   --blue-fg:#0f1c6e;
+  --gold-bg:rgba(255,215,0,.18);   --gold-fg:#886600;
+  --red-bg:rgba(204,0,0,.10);      --red-fg:#990000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  background:#000000;
+  background:#ffffff;
   background-image:
-    radial-gradient(ellipse 80% 40% at 15% 50%,rgba(34,51,204,.35) 0%,transparent 65%),
-    radial-gradient(ellipse 60% 50% at 85% 20%,rgba(232,0,30,.22) 0%,transparent 65%);
+    radial-gradient(ellipse 100% 30% at 50% 0%,rgba(204,0,0,.06) 0%,transparent 100%),
+    radial-gradient(ellipse 60% 20% at 100% 100%,rgba(26,44,158,.05) 0%,transparent 100%);
   color:var(--text);
   font-family:'Oswald','Arial Narrow','Impact',sans-serif;
   min-height:100vh;font-size:14px;
@@ -39,9 +38,8 @@ body{
 body::before{
   content:"";position:fixed;inset:0;
   background-image:
-    repeating-linear-gradient(160deg,transparent,transparent 60px,rgba(232,0,30,.028) 60px,rgba(232,0,30,.028) 62px),
-    repeating-linear-gradient(160deg,transparent,transparent 100px,rgba(34,51,200,.022) 100px,rgba(34,51,200,.022) 101px),
-    repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(255,255,255,.006) 80px,rgba(255,255,255,.006) 81px);
+    repeating-linear-gradient(160deg,transparent,transparent 80px,rgba(204,0,0,.018) 80px,rgba(204,0,0,.018) 82px),
+    repeating-linear-gradient(160deg,transparent,transparent 140px,rgba(26,44,158,.014) 140px,rgba(26,44,158,.014) 141px);
   pointer-events:none;z-index:0;
 }
 body>*{position:relative;z-index:1}
@@ -53,15 +51,15 @@ a{color:inherit}
 
 /* ── Header ─────────────────────────────────────────────── */
 header{
-  background:linear-gradient(90deg,#000000 0%,#080e28 25%,#0d1540 50%,#080e28 75%,#000000 100%);
-  border-bottom:4px solid var(--red);
+  background:linear-gradient(90deg,#0d1a70 0%,#1a2c9e 40%,#0f1c6e 100%);
+  border-bottom:5px solid var(--red);
   position:sticky;top:0;z-index:20;
-  box-shadow:0 4px 32px rgba(232,0,30,.55),0 0 0 1px rgba(232,0,30,.18);
+  box-shadow:0 4px 20px rgba(0,0,0,.30);
 }
 .hdr-inner{display:flex;align-items:center;gap:14px;padding:12px 20px;max-width:1200px;margin:0 auto}
 .hdr-logo{
   width:44px;height:44px;flex-shrink:0;
-  background:linear-gradient(135deg,#ff6600,#cc2200);
+  background:rgba(255,255,255,.15);
   border-radius:4px;
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 0 22px rgba(255,100,0,.55);
@@ -72,29 +70,29 @@ header{
   font-size:20px;font-weight:700;letter-spacing:1.2px;line-height:1.1;
   text-transform:uppercase;
   color:#ffffff;
-  text-shadow:2px 2px 0 rgba(200,0,20,.9),0 0 22px rgba(232,0,30,.50);
+  text-shadow:2px 2px 0 rgba(0,0,80,.7),0 0 18px rgba(255,255,255,.15);
 }
-.hdr-sub{font-size:11px;color:var(--muted);margin-top:2px;font-family:system-ui,sans-serif;letter-spacing:.3px}
+.hdr-sub{font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;font-family:system-ui,sans-serif;letter-spacing:.3px}
 .hdr-badges{margin-left:auto;display:flex;align-items:center;gap:8px}
 .pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:2px;letter-spacing:.8px;text-transform:uppercase;font-family:system-ui,sans-serif}
-.pill-active{background:var(--green-bg);color:var(--green-fg);border:1px solid rgba(0,221,85,.4)}
-.pill-phase{background:var(--amber-bg);color:var(--amber-fg);border:1px solid rgba(255,136,0,.4)}
+.pill-active{background:rgba(0,200,80,.15);color:#004d22;border:1px solid rgba(0,150,60,.4)}
+.pill-phase{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.4)}
 .btn-reload{
   font-size:10px;font-weight:700;padding:6px 14px;border-radius:2px;
-  border:2px solid var(--red);
-  background:rgba(232,0,30,.10);color:var(--red);cursor:pointer;
+  border:2px solid #fff;
+  background:rgba(255,255,255,.12);color:#fff;cursor:pointer;
   transition:all .15s;letter-spacing:.8px;text-transform:uppercase;font-family:inherit;
 }
-.btn-reload:hover{background:rgba(232,0,30,.28);border-color:var(--red);color:#fff}
+.btn-reload:hover{background:rgba(255,255,255,.28);border-color:#fff;color:#fff}
 
 /* ── Cards ───────────────────────────────────────────────── */
 .card{
-  background:linear-gradient(135deg,rgba(10,18,70,.96) 0%,rgba(5,10,40,.98) 100%);
-  border:1px solid var(--border);
-  border-top:3px solid var(--red);
+  background:#ffffff;
+  border:1px solid rgba(26,44,158,.18);
+  border-top:4px solid var(--red);
   border-radius:4px;
   padding:20px;
-  box-shadow:inset 0 0 40px rgba(0,0,0,.4),0 2px 16px rgba(0,0,0,.55);
+  box-shadow:0 2px 12px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.05);
 }
 .card-title{
   font-size:11px;font-weight:700;text-transform:uppercase;
@@ -106,20 +104,21 @@ header{
 /* ── KPIs ────────────────────────────────────────────────── */
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .kpi{
-  background:linear-gradient(135deg,rgba(10,18,70,.96),rgba(5,10,40,.98));
-  border:1px solid var(--border);border-top:3px solid;
+  background:#ffffff;
+  border:1px solid rgba(26,44,158,.16);border-top:4px solid;
   border-radius:4px;padding:16px 18px;
   position:relative;overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
-.kpi:nth-child(1){border-top-color:#4466ff}
-.kpi:nth-child(2){border-top-color:#e8001e}
-.kpi:nth-child(3){border-top-color:#00dd55}
-.kpi:nth-child(4){border-top-color:#ffd700}
+.kpi:nth-child(1){border-top-color:#1a2c9e}
+.kpi:nth-child(2){border-top-color:#cc0000}
+.kpi:nth-child(3){border-top-color:#007733}
+.kpi:nth-child(4){border-top-color:#cc0000}
 .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:8px;font-weight:600;font-family:system-ui,sans-serif}
 .kpi-val{font-size:38px;font-weight:700;line-height:1;color:var(--text)}
 .kpi-sub{font-size:14px;color:var(--faint);font-weight:400}
-.kpi:nth-child(3) .kpi-val{color:var(--green)}
-.kpi:nth-child(4) .kpi-val{color:var(--amber)}
+.kpi:nth-child(3) .kpi-val{color:#007733}
+.kpi:nth-child(4) .kpi-val{color:#cc0000}
 
 /* ── Podio ───────────────────────────────────────────────── */
 .mid-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
@@ -176,10 +175,10 @@ header{
 .search{
   width:100%;border:1px solid var(--border);border-radius:2px;
   padding:9px 14px;font-size:12px;
-  background:rgba(5,10,45,.80);color:var(--text);outline:none;
+  background:#f8f8fc;color:var(--text);outline:none;
   margin-bottom:16px;transition:border .15s;font-family:system-ui,sans-serif;
 }
-.search:focus{border-color:var(--red);background:rgba(10,18,70,.85)}
+.search:focus{border-color:var(--red);background:#fff;box-shadow:0 0 0 3px rgba(204,0,0,.10)}
 .search::placeholder{color:var(--faint)}
 .tbl{width:100%;border-collapse:collapse;font-size:12px;font-family:system-ui,sans-serif}
 .tbl thead th{
@@ -189,14 +188,14 @@ header{
   font-family:'Oswald','Arial Narrow','Impact',sans-serif;
 }
 .tbl thead th:nth-child(-n+3){text-align:left}
-.tbl tbody tr{border-bottom:1px solid rgba(255,120,0,.07);transition:background .1s}
+.tbl tbody tr{border-bottom:1px solid rgba(26,44,158,.08);transition:background .1s}
 .tbl tbody tr:last-child{border:0}
-.tbl tbody tr:hover{background:rgba(255,100,0,.07)}
-.tbl tbody td{padding:9px 10px;text-align:right;color:var(--muted)}
+.tbl tbody tr:hover{background:rgba(26,44,158,.04)}
+.tbl tbody td{padding:9px 10px;text-align:right;color:#333355}
 .tbl tbody td:nth-child(-n+3){text-align:left}
 .tbl-top{
-  background:linear-gradient(90deg,rgba(232,0,30,.11),transparent) !important;
-  border-bottom:1px solid rgba(232,0,30,.28) !important;
+  background:linear-gradient(90deg,rgba(204,0,0,.07),transparent) !important;
+  border-bottom:1px solid rgba(204,0,0,.20) !important;
 }
 .tbl-pos{color:var(--faint);font-size:11px;width:22px;font-family:'Oswald','Arial Narrow','Impact',sans-serif}
 .tbl-alias{font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.3px}
@@ -220,7 +219,7 @@ header{
 .btn-fase-off:hover{border-color:var(--border-hi);color:var(--text)}
 .match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .match-card{
-  background:linear-gradient(135deg,rgba(8,14,55,.90),rgba(4,8,30,.95));
+  background:#ffffff;
   border:1px solid var(--border);border-radius:4px;padding:14px;
   transition:border-color .15s;
 }
@@ -231,8 +230,8 @@ header{
 .team-local{text-align:right}
 .match-score{
   font-size:16px;font-weight:700;font-family:'Oswald','Arial Narrow','Impact',sans-serif;
-  background:rgba(255,120,0,.12);
-  border:2px solid var(--border-hi);border-radius:3px;
+  background:rgba(204,0,0,.08);
+  border:2px solid rgba(204,0,0,.50);border-radius:3px;
   padding:4px 12px;white-space:nowrap;flex-shrink:0;
   color:var(--gold);
 }
@@ -256,32 +255,31 @@ details>summary:hover{color:var(--text)}
 /* ── Footer ───────────────────────────────────────────────── */
 footer{
   text-align:center;font-size:11px;color:var(--faint);
-  padding:20px 0 40px;border-top:2px solid var(--border);margin-top:8px;
+  padding:20px 0 40px;border-top:2px solid rgba(26,44,158,.15);margin-top:8px;
   font-family:system-ui,sans-serif;
 }
 footer code{color:var(--muted)}
 
 /* ── Sponsor ─────────────────────────────────────────────── */
 .sponsor-band{
-  border-top:2px solid var(--border);
-  border-bottom:2px solid var(--border);
-  padding:14px 0;
-  text-align:center;
-  position:relative;
-  background:linear-gradient(90deg,transparent,rgba(232,0,30,.06) 30%,rgba(34,51,200,.06) 70%,transparent);
+  background:linear-gradient(90deg,#0d1a70 0%,#1a2c9e 40%,#0f1c6e 100%);
+  border-bottom:3px solid var(--red);
+  padding:7px 20px;
+  display:flex;align-items:center;justify-content:flex-end;
+  max-width:100%;
 }
 .sponsor-inner{
-  display:inline-flex;align-items:center;gap:20px;
-  flex-direction:column;
+  display:inline-flex;align-items:center;gap:10px;
+  max-width:1200px;margin:0 auto;width:100%;justify-content:flex-end;
 }
 .sponsor-label{
-  font-size:9px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--faint);font-family:system-ui,sans-serif;
+  font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);font-family:system-ui,sans-serif;white-space:nowrap;
 }
 .sponsor-logo{
-  height:32px;
+  height:22px;
   filter:brightness(0) invert(1);
-  opacity:.80;
+  opacity:.85;
   transition:opacity .2s;
 }
 .sponsor-logo:hover{opacity:1;}
@@ -316,6 +314,7 @@ footer code{color:var(--muted)}
     </div>
   </div>
 </header>
+<div class="sponsor-band"><div class="sponsor-inner"><span class="sponsor-label">Patrocinado por</span><img src="supplia-logo.png" alt="Supplia" class="sponsor-logo"></div></div>
 
 <div class="wrap">
 <div class="stack">
@@ -415,15 +414,8 @@ footer code{color:var(--muted)}
 </div>
 </div>
 
-<div class="sponsor-band">
-  <div class="sponsor-inner">
-    <span class="sponsor-label">· Patrocinado por ·</span>
-    <img src="supplia-logo.png" alt="Supplia" class="sponsor-logo">
-  </div>
-</div>
-
 <footer>
-  Dashboard generado por <code>scorer.py</code> · Ejecuta <strong>Actualizar_Ranking</strong> tras cada partido para refrescar los datos.
+  Actualizado automáticamente cada hora · Mundial 2026
 </footer>
 
 <script>
