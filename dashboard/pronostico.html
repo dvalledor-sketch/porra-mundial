@@ -6,6 +6,7 @@
 <title>Porra Mundial 2026 — Tus Pronósticos</title>
 <link rel="icon" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 :root{
   --red:#cc0000; --red-dk:#990000;
@@ -177,6 +178,7 @@ input:focus{border-color:var(--blue-lt);box-shadow:0 0 0 3px rgba(40,64,204,.14)
 .hidden{display:none!important}
 .center{text-align:center}
 .bigicon{font-size:40px;text-align:center;margin-bottom:6px}
+img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:inline-block}
 </style>
 </head>
 <body>
@@ -284,6 +286,12 @@ PARTIDOS.forEach(p=> estado[p.id] = {l:null, v:null});
 
 let SESION = { alias:"", email:"", cerrado:false };
 
+// ── Banderas cross-plataforma (Twemoji: SVG en todos los navegadores) ──
+function tw(el){
+  try{ if(window.twemoji) twemoji.parse(el||document.body,
+    {folder:"svg", ext:".svg", base:"https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/"}); }catch(e){}
+}
+
 // ── Utilidades de fecha límite ───────────────────────────────────
 function fmtLimite(iso){
   try{
@@ -370,6 +378,7 @@ function renderPartidos(){
     actualizarClasificacion(g);
   });
   wireMatches();
+  tw(cont);
 }
 
 function matchCardHTML(p){
@@ -500,6 +509,7 @@ function actualizarClasificacion(g){
       <span class="pts"><small>${t.pj} PJ</small>${t.pts} pts</span>
     </div>`).join("");
   cont.innerHTML = `<div class="standings"><h4>Clasificación prevista <small>Grupo ${g} · pasan 2</small></h4>${filas}</div>`;
+  tw(cont);
 }
 
 function renderChips(){
