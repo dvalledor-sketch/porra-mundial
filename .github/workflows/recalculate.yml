@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: porra-scoring
+  cancel-in-progress: false
+
 jobs:
   recalculate:
     runs-on: ubuntu-latest
@@ -23,6 +27,12 @@ jobs:
 
       - name: Instalar dependencias
         run: pip install openpyxl requests
+
+      - name: Descargar pronosticos del formulario (Supabase)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python scripts/supabase_pull.py
 
       - name: Calcular puntos
         run: python scripts/scorer.py
