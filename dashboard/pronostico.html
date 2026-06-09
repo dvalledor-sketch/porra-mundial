@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Porra Mundial 2026 — Tus Pronósticos</title>
+<link rel="icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#cc0000; --red-dk:#990000;
+  --blue:#1a2c9e; --blue-dk:#0f1c6e; --blue-lt:#2840cc;
+  --gold:#ffd700; --gold-dk:#bb9900;
+  --card:#ffffff; --text:#0d1433; --muted:#2840aa; --faint:#7080b0;
+  --green:#007733; --border:rgba(26,44,158,.18);
+  --glass-bg:rgba(255,255,255,0.72);
+  --glass-shadow:0 8px 32px rgba(26,44,158,.14), 0 2px 8px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Oswald','Arial Narrow',sans-serif;color:var(--text);
+  background-color:#d8dff0;
+  background-image:
+    radial-gradient(ellipse 55% 45% at 102% -5%, rgba(204,0,0,.14) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at -5% 105%, rgba(26,44,158,.12) 0%, transparent 65%),
+    repeating-linear-gradient(-45deg, transparent, transparent 38px, rgba(26,44,158,.030) 38px, rgba(26,44,158,.030) 40px);
+  min-height:100vh;padding-bottom:90px;
+}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 12px}
+
+/* Header */
+header{
+  background:linear-gradient(90deg,#07114d 0%,#1a2c9e 45%,#0f1c6e 100%);
+  color:#fff;padding:16px 0 14px;
+}
+.hdr{display:flex;align-items:center;gap:12px;max-width:760px;margin:0 auto;padding:0 14px}
+.hdr h1{font-size:20px;margin:0;text-transform:uppercase;letter-spacing:.5px;font-weight:700;line-height:1.05}
+.hdr .sub{font-size:11px;color:rgba(255,255,255,.65);font-family:system-ui,sans-serif;margin-top:2px}
+
+/* Banda de patrocinio (igual que el dashboard) */
+.sponsor-band{
+  background:linear-gradient(90deg,#cc0000 0%,#9e1212 40%,#cc0000 100%);
+  padding:7px 20px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.sponsor-band::before{
+  content:"★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★";
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:8px;letter-spacing:6px;color:rgba(255,255,255,.18);white-space:nowrap;overflow:hidden;
+}
+.sponsor-inner{
+  display:inline-flex;align-items:center;gap:12px;max-width:760px;margin:0 auto;width:100%;
+  justify-content:flex-end;position:relative;z-index:1;
+}
+.sponsor-label{
+  font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.80);
+  font-family:system-ui,sans-serif;white-space:nowrap;font-weight:700;
+}
+.sponsor-logo{height:30px;filter:brightness(0) invert(1);opacity:.95}
+.deadline{font-family:system-ui,sans-serif;font-size:11px;margin-left:auto;text-align:right;color:rgba(255,255,255,.85)}
+.deadline b{color:var(--gold)}
+
+/* Cards / panels */
+.panel{background:var(--glass-bg);backdrop-filter:blur(14px) saturate(150%);
+  border:1px solid rgba(255,255,255,.8);border-radius:14px;box-shadow:var(--glass-shadow);
+  padding:18px;margin:16px 0}
+.panel h2{margin:0 0 4px;font-size:16px;text-transform:uppercase;letter-spacing:.5px;color:var(--blue-dk)}
+.panel p.note{font-family:system-ui,sans-serif;font-size:12.5px;color:var(--faint);margin:4px 0 0;line-height:1.5}
+
+label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:14px 0 5px;font-weight:600}
+input[type=text],input[type=email]{
+  width:100%;padding:13px 14px;font-size:16px;font-family:system-ui,sans-serif;
+  border:1.5px solid var(--border);border-radius:10px;background:#fff;color:var(--text);outline:none}
+input:focus{border-color:var(--blue-lt);box-shadow:0 0 0 3px rgba(40,64,204,.14)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.7px;
+  font-size:15px;padding:14px 22px;border:none;border-radius:11px;cursor:pointer;width:100%;
+  background:linear-gradient(90deg,#cc0000 0%,#9e1212 45%,#cc0000 100%);color:#fff;
+  box-shadow:0 4px 14px rgba(204,0,0,.32);transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.55;cursor:not-allowed;box-shadow:none}
+.btn.secondary{background:rgba(26,44,158,.10);color:var(--blue-dk);box-shadow:none;border:1.5px solid var(--border)}
+
+.msg{font-family:system-ui,sans-serif;font-size:13px;padding:10px 12px;border-radius:9px;margin-top:12px;display:none}
+.msg.show{display:block}
+.msg.err{background:rgba(204,0,0,.10);color:var(--red-dk);border:1px solid rgba(204,0,0,.3)}
+.msg.ok{background:rgba(0,119,51,.10);color:var(--green);border:1px solid rgba(0,119,51,.3)}
+
+/* Progress + group nav (sticky) */
+.sticky{position:sticky;top:0;z-index:20;background:rgba(216,223,240,.92);backdrop-filter:blur(8px);
+  padding:10px 0 8px;border-bottom:1px solid var(--border)}
+.progwrap{display:flex;align-items:center;gap:10px;padding:0 14px;max-width:760px;margin:0 auto}
+.progbar{flex:1;height:9px;background:rgba(26,44,158,.14);border-radius:6px;overflow:hidden}
+.progfill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#00aa55);transition:width .3s}
+.progtxt{font-family:system-ui,sans-serif;font-size:12px;font-weight:700;color:var(--blue-dk);white-space:nowrap}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:9px 14px 2px;max-width:760px;margin:0 auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font-size:13px;font-weight:600;padding:6px 13px;border-radius:20px;cursor:pointer;
+  background:#fff;border:1.5px solid var(--border);color:var(--muted);font-family:system-ui,sans-serif;position:relative}
+.chip.done{background:rgba(0,119,51,.12);border-color:rgba(0,119,51,.4);color:var(--green)}
+.chip .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-left:5px;vertical-align:middle}
+
+/* Group section */
+.grpttl{font-size:15px;text-transform:uppercase;letter-spacing:.8px;color:var(--blue-dk);
+  margin:22px 4px 8px;font-weight:700;display:flex;align-items:center;gap:8px}
+.grpttl .gbadge{background:var(--blue);color:#fff;width:26px;height:26px;border-radius:7px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+
+/* Match card */
+.match{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:11px 12px;margin:8px 0;box-shadow:0 2px 6px rgba(26,44,158,.06)}
+.match.filled{border-color:rgba(0,119,51,.45);box-shadow:0 2px 8px rgba(0,119,51,.10)}
+.mrow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.team{display:flex;align-items:center;gap:7px;min-width:0}
+.team.vis{flex-direction:row-reverse;text-align:right}
+.flag{font-size:26px;line-height:1;flex:none}
+.tname{font-size:14px;font-weight:600;font-family:system-ui,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.score{display:flex;align-items:center;gap:6px;justify-content:center}
+.score.vis{}
+.stp{width:34px;height:34px;border-radius:9px;border:1.5px solid var(--border);background:#fff;
+  font-size:20px;font-weight:700;color:var(--blue);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;line-height:1;user-select:none;padding:0}
+.stp:active{background:rgba(26,44,158,.10)}
+.val{width:30px;text-align:center;font-size:22px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+.val.empty{color:var(--faint)}
+.vs{font-size:11px;color:var(--faint);font-weight:700;font-family:system-ui,sans-serif;padding:0 2px}
+
+/* Premios */
+.premio{margin-bottom:6px}
+.premio small{display:block;font-family:system-ui,sans-serif;font-size:11px;color:var(--faint);margin-top:3px}
+
+/* Sticky save bar */
+.savebar{position:fixed;bottom:0;left:0;right:0;z-index:30;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-top:1px solid var(--border);
+  padding:10px 12px;box-shadow:0 -4px 20px rgba(26,44,158,.12)}
+.savebar .inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.savebar .who{font-family:system-ui,sans-serif;font-size:12px;color:var(--muted);flex:none}
+.savebar .who b{color:var(--blue-dk)}
+.savebar .btn{width:auto;flex:1;max-width:280px;margin-left:auto}
+
+.hidden{display:none!important}
+.center{text-align:center}
+.bigicon{font-size:40px;text-align:center;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div>
+      <h1>Porra Mundial 2026</h1>
+      <div class="sub">Pronósticos · Fase de Grupos</div>
+    </div>
+  </div>
+</header>
+<div class="sponsor-band">
+  <div class="sponsor-inner">
+    <span class="sponsor-label">Patrocinado por</span>
+    <img src="supplia-logo.png" alt="Supplia" class="sponsor-logo" onerror="this.style.display='none'">
+  </div>
+</div>
+
+<!-- ░░ PANTALLA 1: LOGIN ░░ -->
+<div id="login" class="wrap">
+  <div class="panel">
+    <h2>Entra con tu alias</h2>
+    <p class="note">Usa el <b>mismo alias y email</b> siempre, así guardamos y recuperamos tus pronósticos. Puedes volver a entrar y cambiarlos cuantas veces quieras hasta la fecha límite.</p>
+    <label for="in-alias">Tu alias</label>
+    <input id="in-alias" type="text" autocomplete="nickname" placeholder="Ej: DaniV" maxlength="40">
+    <label for="in-email">Tu email</label>
+    <input id="in-email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+    <div style="height:16px"></div>
+    <button id="btn-enter" class="btn">Entrar →</button>
+    <div id="login-msg" class="msg err"></div>
+    <p class="note" id="dl-note" style="margin-top:14px"></p>
+  </div>
+</div>
+
+<!-- ░░ PANTALLA 2: FORMULARIO ░░ -->
+<div id="form" class="hidden">
+  <div class="sticky">
+    <div class="progwrap">
+      <div class="progbar"><div id="progfill" class="progfill"></div></div>
+      <div id="progtxt" class="progtxt">0/72</div>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div class="wrap">
+    <div id="closed-banner" class="msg err hidden" style="margin-top:14px"></div>
+    <div id="matches"></div>
+
+    <!-- Premios -->
+    <div class="grpttl"><span class="gbadge">★</span> Premios especiales <span style="font-family:system-ui;font-size:11px;color:var(--faint);font-weight:400;text-transform:none;letter-spacing:0">+15 pts cada acierto</span></div>
+    <div class="panel" style="margin-top:8px">
+      <div class="premio">
+        <label for="p-mvp">MVP del torneo</label>
+        <input id="p-mvp" type="text" placeholder="Nombre del jugador">
+      </div>
+      <div class="premio">
+        <label for="p-gol">Goleador del torneo</label>
+        <input id="p-gol" type="text" placeholder="Nombre del jugador">
+      </div>
+      <div class="premio">
+        <label for="p-por">Portero del torneo</label>
+        <input id="p-por" type="text" placeholder="Nombre del jugador">
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+  </div>
+</div>
+
+<!-- Barra fija de guardar -->
+<div id="savebar" class="savebar hidden">
+  <div class="inner">
+    <div class="who">Pronóstico de <b id="who-alias">—</b></div>
+    <button id="btn-save" class="btn">💾 Guardar</button>
+  </div>
+  <div class="wrap"><div id="save-msg" class="msg"></div></div>
+</div>
+
+<script>
+// ── Config Supabase ──────────────────────────────────────────────
+const SB_URL = "https://iwicyguwsobdbsusxydx.supabase.co";
+const SB_KEY = "sb_publishable_Q8aBMLOXDNaqZgp-qmoZwA_5kj79yWp";
+
+async function rpc(fn, args){
+  const r = await fetch(`${SB_URL}/rest/v1/rpc/${fn}`, {
+    method:"POST",
+    headers:{ "apikey":SB_KEY, "Authorization":"Bearer "+SB_KEY, "Content-Type":"application/json" },
+    body: JSON.stringify(args)
+  });
+  if(!r.ok){ throw new Error("HTTP "+r.status+" "+(await r.text())); }
+  return r.json();
+}
+
+// ── Datos de partidos (72 de fase de grupos) ─────────────────────
+const PARTIDOS = [{"id": "G-A1-A2", "g": "A", "j": 1, "l": "México", "v": "Sudáfrica", "bl": "🇲🇽", "bv": "🇿🇦"}, {"id": "G-A3-A4", "g": "A", "j": 1, "l": "Corea del Sur", "v": "Chequia", "bl": "🇰🇷", "bv": "🇨🇿"}, {"id": "G-A1-A3", "g": "A", "j": 2, "l": "México", "v": "Corea del Sur", "bl": "🇲🇽", "bv": "🇰🇷"}, {"id": "G-A2-A4", "g": "A", "j": 2, "l": "Sudáfrica", "v": "Chequia", "bl": "🇿🇦", "bv": "🇨🇿"}, {"id": "G-A1-A4", "g": "A", "j": 3, "l": "México", "v": "Chequia", "bl": "🇲🇽", "bv": "🇨🇿"}, {"id": "G-A2-A3", "g": "A", "j": 3, "l": "Sudáfrica", "v": "Corea del Sur", "bl": "🇿🇦", "bv": "🇰🇷"}, {"id": "G-B1-B2", "g": "B", "j": 1, "l": "Canadá", "v": "Suiza", "bl": "🇨🇦", "bv": "🇨🇭"}, {"id": "G-B3-B4", "g": "B", "j": 1, "l": "Catar", "v": "Bosnia y Herzegovina", "bl": "🇶🇦", "bv": "🇧🇦"}, {"id": "G-B1-B3", "g": "B", "j": 2, "l": "Canadá", "v": "Catar", "bl": "🇨🇦", "bv": "🇶🇦"}, {"id": "G-B2-B4", "g": "B", "j": 2, "l": "Suiza", "v": "Bosnia y Herzegovina", "bl": "🇨🇭", "bv": "🇧🇦"}, {"id": "G-B1-B4", "g": "B", "j": 3, "l": "Canadá", "v": "Bosnia y Herzegovina", "bl": "🇨🇦", "bv": "🇧🇦"}, {"id": "G-B2-B3", "g": "B", "j": 3, "l": "Suiza", "v": "Catar", "bl": "🇨🇭", "bv": "🇶🇦"}, {"id": "G-C1-C2", "g": "C", "j": 1, "l": "Brasil", "v": "Marruecos", "bl": "🇧🇷", "bv": "🇲🇦"}, {"id": "G-C3-C4", "g": "C", "j": 1, "l": "Escocia", "v": "Haití", "bl": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "bv": "🇭🇹"}, {"id": "G-C1-C3", "g": "C", "j": 2, "l": "Brasil", "v": "Escocia", "bl": "🇧🇷", "bv": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"}, {"id": "G-C2-C4", "g": "C", "j": 2, "l": "Marruecos", "v": "Haití", "bl": "🇲🇦", "bv": "🇭🇹"}, {"id": "G-C1-C4", "g": "C", "j": 3, "l": "Brasil", "v": "Haití", "bl": "🇧🇷", "bv": "🇭🇹"}, {"id": "G-C2-C3", "g": "C", "j": 3, "l": "Marruecos", "v": "Escocia", "bl": "🇲🇦", "bv": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"}, {"id": "G-D1-D2", "g": "D", "j": 1, "l": "Estados Unidos", "v": "Paraguay", "bl": "🇺🇸", "bv": "🇵🇾"}, {"id": "G-D3-D4", "g": "D", "j": 1, "l": "Australia", "v": "Turquía", "bl": "🇦🇺", "bv": "🇹🇷"}, {"id": "G-D1-D3", "g": "D", "j": 2, "l": "Estados Unidos", "v": "Australia", "bl": "🇺🇸", "bv": "🇦🇺"}, {"id": "G-D2-D4", "g": "D", "j": 2, "l": "Paraguay", "v": "Turquía", "bl": "🇵🇾", "bv": "🇹🇷"}, {"id": "G-D1-D4", "g": "D", "j": 3, "l": "Estados Unidos", "v": "Turquía", "bl": "🇺🇸", "bv": "🇹🇷"}, {"id": "G-D2-D3", "g": "D", "j": 3, "l": "Paraguay", "v": "Australia", "bl": "🇵🇾", "bv": "🇦🇺"}, {"id": "G-E1-E2", "g": "E", "j": 1, "l": "Alemania", "v": "Curazao", "bl": "🇩🇪", "bv": "🇨🇼"}, {"id": "G-E3-E4", "g": "E", "j": 1, "l": "Costa Rica", "v": "Ecuador", "bl": "🇨🇷", "bv": "🇪🇨"}, {"id": "G-E1-E3", "g": "E", "j": 2, "l": "Alemania", "v": "Costa Rica", "bl": "🇩🇪", "bv": "🇨🇷"}, {"id": "G-E2-E4", "g": "E", "j": 2, "l": "Curazao", "v": "Ecuador", "bl": "🇨🇼", "bv": "🇪🇨"}, {"id": "G-E1-E4", "g": "E", "j": 3, "l": "Alemania", "v": "Ecuador", "bl": "🇩🇪", "bv": "🇪🇨"}, {"id": "G-E2-E3", "g": "E", "j": 3, "l": "Curazao", "v": "Costa Rica", "bl": "🇨🇼", "bv": "🇨🇷"}, {"id": "G-F1-F2", "g": "F", "j": 1, "l": "Países Bajos", "v": "Japón", "bl": "🇳🇱", "bv": "🇯🇵"}, {"id": "G-F3-F4", "g": "F", "j": 1, "l": "Túnez", "v": "Suecia", "bl": "🇹🇳", "bv": "🇸🇪"}, {"id": "G-F1-F3", "g": "F", "j": 2, "l": "Países Bajos", "v": "Túnez", "bl": "🇳🇱", "bv": "🇹🇳"}, {"id": "G-F2-F4", "g": "F", "j": 2, "l": "Japón", "v": "Suecia", "bl": "🇯🇵", "bv": "🇸🇪"}, {"id": "G-F1-F4", "g": "F", "j": 3, "l": "Países Bajos", "v": "Suecia", "bl": "🇳🇱", "bv": "🇸🇪"}, {"id": "G-F2-F3", "g": "F", "j": 3, "l": "Japón", "v": "Túnez", "bl": "🇯🇵", "bv": "🇹🇳"}, {"id": "G-G1-G2", "g": "G", "j": 1, "l": "Bélgica", "v": "Egipto", "bl": "🇧🇪", "bv": "🇪🇬"}, {"id": "G-G3-G4", "g": "G", "j": 1, "l": "Irán", "v": "Nueva Zelanda", "bl": "🇮🇷", "bv": "🇳🇿"}, {"id": "G-G1-G3", "g": "G", "j": 2, "l": "Bélgica", "v": "Irán", "bl": "🇧🇪", "bv": "🇮🇷"}, {"id": "G-G2-G4", "g": "G", "j": 2, "l": "Egipto", "v": "Nueva Zelanda", "bl": "🇪🇬", "bv": "🇳🇿"}, {"id": "G-G1-G4", "g": "G", "j": 3, "l": "Bélgica", "v": "Nueva Zelanda", "bl": "🇧🇪", "bv": "🇳🇿"}, {"id": "G-G2-G3", "g": "G", "j": 3, "l": "Egipto", "v": "Irán", "bl": "🇪🇬", "bv": "🇮🇷"}, {"id": "G-H1-H2", "g": "H", "j": 1, "l": "España", "v": "Cabo Verde", "bl": "🇪🇸", "bv": "🇨🇻"}, {"id": "G-H3-H4", "g": "H", "j": 1, "l": "Arabia Saudí", "v": "Uruguay", "bl": "🇸🇦", "bv": "🇺🇾"}, {"id": "G-H1-H3", "g": "H", "j": 2, "l": "España", "v": "Arabia Saudí", "bl": "🇪🇸", "bv": "🇸🇦"}, {"id": "G-H2-H4", "g": "H", "j": 2, "l": "Cabo Verde", "v": "Uruguay", "bl": "🇨🇻", "bv": "🇺🇾"}, {"id": "G-H1-H4", "g": "H", "j": 3, "l": "España", "v": "Uruguay", "bl": "🇪🇸", "bv": "🇺🇾"}, {"id": "G-H2-H3", "g": "H", "j": 3, "l": "Cabo Verde", "v": "Arabia Saudí", "bl": "🇨🇻", "bv": "🇸🇦"}, {"id": "G-I1-I2", "g": "I", "j": 1, "l": "Francia", "v": "Senegal", "bl": "🇫🇷", "bv": "🇸🇳"}, {"id": "G-I3-I4", "g": "I", "j": 1, "l": "Noruega", "v": "Irak", "bl": "🇳🇴", "bv": "🇮🇶"}, {"id": "G-I1-I3", "g": "I", "j": 2, "l": "Francia", "v": "Noruega", "bl": "🇫🇷", "bv": "🇳🇴"}, {"id": "G-I2-I4", "g": "I", "j": 2, "l": "Senegal", "v": "Irak", "bl": "🇸🇳", "bv": "🇮🇶"}, {"id": "G-I1-I4", "g": "I", "j": 3, "l": "Francia", "v": "Irak", "bl": "🇫🇷", "bv": "🇮🇶"}, {"id": "G-I2-I3", "g": "I", "j": 3, "l": "Senegal", "v": "Noruega", "bl": "🇸🇳", "bv": "🇳🇴"}, {"id": "G-J1-J2", "g": "J", "j": 1, "l": "Argentina", "v": "Argelia", "bl": "🇦🇷", "bv": "🇩🇿"}, {"id": "G-J3-J4", "g": "J", "j": 1, "l": "Austria", "v": "Jordania", "bl": "🇦🇹", "bv": "🇯🇴"}, {"id": "G-J1-J3", "g": "J", "j": 2, "l": "Argentina", "v": "Austria", "bl": "🇦🇷", "bv": "🇦🇹"}, {"id": "G-J2-J4", "g": "J", "j": 2, "l": "Argelia", "v": "Jordania", "bl": "🇩🇿", "bv": "🇯🇴"}, {"id": "G-J1-J4", "g": "J", "j": 3, "l": "Argentina", "v": "Jordania", "bl": "🇦🇷", "bv": "🇯🇴"}, {"id": "G-J2-J3", "g": "J", "j": 3, "l": "Argelia", "v": "Austria", "bl": "🇩🇿", "bv": "🇦🇹"}, {"id": "G-K1-K2", "g": "K", "j": 1, "l": "Portugal", "v": "Colombia", "bl": "🇵🇹", "bv": "🇨🇴"}, {"id": "G-K3-K4", "g": "K", "j": 1, "l": "Uzbekistán", "v": "RD Congo", "bl": "🇺🇿", "bv": "🇨🇩"}, {"id": "G-K1-K3", "g": "K", "j": 2, "l": "Portugal", "v": "Uzbekistán", "bl": "🇵🇹", "bv": "🇺🇿"}, {"id": "G-K2-K4", "g": "K", "j": 2, "l": "Colombia", "v": "RD Congo", "bl": "🇨🇴", "bv": "🇨🇩"}, {"id": "G-K1-K4", "g": "K", "j": 3, "l": "Portugal", "v": "RD Congo", "bl": "🇵🇹", "bv": "🇨🇩"}, {"id": "G-K2-K3", "g": "K", "j": 3, "l": "Colombia", "v": "Uzbekistán", "bl": "🇨🇴", "bv": "🇺🇿"}, {"id": "G-L1-L2", "g": "L", "j": 1, "l": "Inglaterra", "v": "Croacia", "bl": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "bv": "🇭🇷"}, {"id": "G-L3-L4", "g": "L", "j": 1, "l": "Ghana", "v": "Panamá", "bl": "🇬🇭", "bv": "🇵🇦"}, {"id": "G-L1-L3", "g": "L", "j": 2, "l": "Inglaterra", "v": "Ghana", "bl": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "bv": "🇬🇭"}, {"id": "G-L2-L4", "g": "L", "j": 2, "l": "Croacia", "v": "Panamá", "bl": "🇭🇷", "bv": "🇵🇦"}, {"id": "G-L1-L4", "g": "L", "j": 3, "l": "Inglaterra", "v": "Panamá", "bl": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "bv": "🇵🇦"}, {"id": "G-L2-L3", "g": "L", "j": 3, "l": "Croacia", "v": "Ghana", "bl": "🇭🇷", "bv": "🇬🇭"}];
+const GRUPOS = [...new Set(PARTIDOS.map(p=>p.g))];
+
+// Estado: match_id -> {l:null|int, v:null|int}
+const estado = {};
+PARTIDOS.forEach(p=> estado[p.id] = {l:null, v:null});
+
+let SESION = { alias:"", email:"", cerrado:false };
+
+// ── Utilidades de fecha límite ───────────────────────────────────
+function fmtLimite(iso){
+  try{
+    const d = new Date(iso);
+    return d.toLocaleString("es-ES",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"});
+  }catch(e){ return iso; }
+}
+
+// ── LOGIN ────────────────────────────────────────────────────────
+const $ = s => document.querySelector(s);
+
+$("#btn-enter").addEventListener("click", entrar);
+$("#in-email").addEventListener("keydown", e=>{ if(e.key==="Enter") entrar(); });
+
+async function entrar(){
+  const alias = $("#in-alias").value.trim();
+  const email = $("#in-email").value.trim();
+  const msg = $("#login-msg");
+  msg.className = "msg err";
+  if(!alias){ msg.textContent="Escribe tu alias."; msg.classList.add("show"); return; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent="Escribe un email válido."; msg.classList.add("show"); return; }
+  msg.classList.remove("show");
+  $("#btn-enter").disabled = true; $("#btn-enter").textContent = "Comprobando…";
+
+  try{
+    const res = await rpc("porra_cargar", { p_alias:alias, p_email:email });
+    if(res && res.email_mismatch){
+      msg.textContent = "Ese alias ya está registrado con otro email. Usa el email original (o cambia de alias).";
+      msg.classList.add("show");
+      $("#btn-enter").disabled=false; $("#btn-enter").textContent="Entrar →";
+      return;
+    }
+    SESION.alias = (res && res.alias) ? res.alias : alias;
+    SESION.email = email;
+    SESION.cerrado = !!(res && res.cerrado);
+
+    // Cargar pronósticos previos si existen
+    if(res && res.exists && Array.isArray(res.grupos)){
+      res.grupos.forEach(g=>{ if(estado[g.m]){ estado[g.m] = {l:g.l, v:g.v}; } });
+      const pr = res.premios||{};
+      $("#p-mvp").value = pr.mvp||""; $("#p-gol").value = pr.goleador||""; $("#p-por").value = pr.portero||"";
+    }
+    irAlFormulario(res ? res.limite : null);
+  }catch(err){
+    msg.textContent = "No se pudo conectar. Reintenta en unos segundos.";
+    msg.classList.add("show");
+    $("#btn-enter").disabled=false; $("#btn-enter").textContent="Entrar →";
+  }
+}
+
+// ── RENDER FORMULARIO ────────────────────────────────────────────
+function irAlFormulario(limiteIso){
+  $("#login").classList.add("hidden");
+  $("#form").classList.remove("hidden");
+  $("#savebar").classList.remove("hidden");
+  $("#who-alias").textContent = SESION.alias;
+
+  if(SESION.cerrado){
+    const b = $("#closed-banner");
+    b.textContent = "⛔ El plazo de la fase de grupos ya está cerrado. Puedes mirar tus pronósticos pero no modificarlos.";
+    b.classList.remove("hidden"); b.classList.add("show");
+    $("#btn-save").disabled = true;
+  }
+  renderChips();
+  renderPartidos();
+  actualizarProgreso();
+}
+
+function renderPartidos(){
+  const cont = $("#matches"); cont.innerHTML = "";
+  GRUPOS.forEach(g=>{
+    const ttl = document.createElement("div");
+    ttl.className="grpttl"; ttl.id="grp-"+g;
+    ttl.innerHTML = `<span class="gbadge">${g}</span> Grupo ${g}`;
+    cont.appendChild(ttl);
+    PARTIDOS.filter(p=>p.g===g).forEach(p=> cont.appendChild(matchCard(p)));
+  });
+}
+
+function matchCard(p){
+  const d = document.createElement("div");
+  d.className="match"; d.id="m-"+p.id;
+  d.innerHTML = `
+    <div class="mrow">
+      <div class="team">
+        <span class="flag">${p.bl}</span>
+        <span class="tname">${p.l}</span>
+      </div>
+      <div class="score">
+        <button class="stp" data-act="dec" data-id="${p.id}" data-side="l" aria-label="menos">−</button>
+        <span class="val empty" id="v-${p.id}-l">–</span>
+        <button class="stp" data-act="inc" data-id="${p.id}" data-side="l" aria-label="más">+</button>
+        <span class="vs">vs</span>
+        <button class="stp" data-act="dec" data-id="${p.id}" data-side="v" aria-label="menos">−</button>
+        <span class="val empty" id="v-${p.id}-v">–</span>
+        <button class="stp" data-act="inc" data-id="${p.id}" data-side="v" aria-label="más">+</button>
+      </div>
+      <div class="team vis">
+        <span class="flag">${p.bv}</span>
+        <span class="tname">${p.v}</span>
+      </div>
+    </div>`;
+  d.querySelectorAll(".stp").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      if(SESION.cerrado) return;
+      const {id, side, act} = b.dataset;
+      let cur = estado[id][side];
+      if(cur===null) cur = (act==="inc") ? 1 : 0;   // 1er "+" → 1, 1er "−" → 0
+      else cur = (act==="inc") ? Math.min(20, cur+1) : Math.max(0, cur-1);
+      estado[id][side] = cur;
+      pintarMatch(id);
+      actualizarProgreso();
+    });
+  });
+  return d;
+}
+
+function pintarMatch(id){
+  const s = estado[id];
+  ["l","v"].forEach(side=>{
+    const el = document.getElementById(`v-${id}-${side}`);
+    if(s[side]===null){ el.textContent="–"; el.classList.add("empty"); }
+    else{ el.textContent=s[side]; el.classList.remove("empty"); }
+  });
+  const card = document.getElementById("m-"+id);
+  if(card) card.classList.toggle("filled", s.l!==null && s.v!==null);
+}
+
+function llenoMatch(id){ const s=estado[id]; return s.l!==null && s.v!==null; }
+function llenosGrupo(g){ return PARTIDOS.filter(p=>p.g===g).every(p=>llenoMatch(p.id)); }
+
+function actualizarProgreso(){
+  const total = PARTIDOS.length;
+  const hechos = PARTIDOS.filter(p=>llenoMatch(p.id)).length;
+  $("#progfill").style.width = (hechos/total*100)+"%";
+  $("#progtxt").textContent = `${hechos}/${total}`;
+  // refrescar valores visibles
+  PARTIDOS.forEach(p=>pintarMatch(p.id));
+  // chips
+  GRUPOS.forEach(g=>{
+    const c = document.getElementById("chip-"+g);
+    if(c) c.classList.toggle("done", llenosGrupo(g));
+  });
+}
+
+function renderChips(){
+  const cont = $("#chips"); cont.innerHTML="";
+  GRUPOS.forEach(g=>{
+    const c = document.createElement("div");
+    c.className="chip"; c.id="chip-"+g; c.textContent=g;
+    c.addEventListener("click", ()=>{
+      const t = document.getElementById("grp-"+g);
+      if(t) t.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+    cont.appendChild(c);
+  });
+}
+
+// ── GUARDAR ──────────────────────────────────────────────────────
+$("#btn-save").addEventListener("click", guardar);
+
+async function guardar(){
+  if(SESION.cerrado) return;
+  const grupos = PARTIDOS
+    .filter(p=>llenoMatch(p.id))
+    .map(p=>({ m:p.id, l:estado[p.id].l, v:estado[p.id].v }));
+  const premios = {
+    mvp: $("#p-mvp").value.trim(),
+    goleador: $("#p-gol").value.trim(),
+    portero: $("#p-por").value.trim()
+  };
+  const sm = $("#save-msg");
+  sm.className="msg"; sm.classList.remove("show");
+  const btn = $("#btn-save");
+  btn.disabled=true; btn.textContent="Guardando…";
+
+  try{
+    const res = await rpc("porra_guardar", {
+      p_alias:SESION.alias, p_email:SESION.email, p_grupos:grupos, p_premios:premios
+    });
+    if(res && res.ok){
+      sm.className="msg ok show";
+      sm.textContent = `✅ Guardado (${res.guardados}/72 partidos). Puedes cerrar; tus cambios quedan registrados.`;
+    }else if(res && res.error==="cerrado"){
+      sm.className="msg err show"; sm.textContent="⛔ El plazo se ha cerrado, no se ha guardado.";
+      SESION.cerrado=true;
+    }else if(res && res.error==="email_mismatch"){
+      sm.className="msg err show"; sm.textContent="Ese alias pertenece a otro email.";
+    }else{
+      sm.className="msg err show"; sm.textContent="No se pudo guardar: "+(res&&res.error||"error");
+    }
+  }catch(err){
+    sm.className="msg err show"; sm.textContent="Error de conexión al guardar. Reintenta.";
+  }
+  btn.disabled=false; btn.textContent="💾 Guardar";
+}
+
+// Mostrar fecha límite en login
+(async ()=>{
+  try{
+    const res = await rpc("porra_cargar", { p_alias:"__ping__", p_email:"x@x.x" });
+    if(res && res.limite){
+      const cerrado = res.cerrado;
+      $("#dl-note").innerHTML = cerrado
+        ? "⛔ <b>El plazo de grupos está cerrado.</b>"
+        : `🕔 Fecha límite: <b>${fmtLimite(res.limite)}</b> (hora España).`;
+    }
+  }catch(e){ /* silencioso */ }
+})();
+</script>
+</body>
+</html>
