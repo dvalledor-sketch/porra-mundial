@@ -553,6 +553,7 @@ def main():
         "resultados": {k: list(v.real) if v.real else None for k, v in resultados.items()},
         "premios_reales": premios_reales,
         "bracket": _bracket,
+        "avatares_b64": _avatar_b64_cache,
         "ranking": [
             {
                 "alias":             p.alias,

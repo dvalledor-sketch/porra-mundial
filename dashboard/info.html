@@ -240,10 +240,11 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
   <!-- CUENTA ATRÁS -->
   <section id="cuenta">
     <div class="counts">
-      <div class="count card">
-        <div class="lbl">Arranque del Mundial</div>
+      <div class="count card" id="card-inicio">
+        <div class="lbl" id="lbl-inicio">Arranque del Mundial</div>
         <div class="big" id="cd-inicio">—</div>
-        <div class="sub">11 jun 2026 · México–Sudáfrica · Estadio Azteca</div>
+        <div class="sub" id="sub-inicio">11 jun 2026 · México–Sudáfrica · Estadio Azteca</div>
+        <div id="prox24" style="display:none"></div>
       </div>
       <div class="count card">
         <div class="lbl">Cierre de la porra (fase de grupos)</div>
@@ -427,9 +428,60 @@ function fmtCd(target){
   if(d>0) return `${d}d ${h}h ${m}m`;
   return `${h}h ${m}m`;
 }
+// Kickoff real (hora España, CEST UTC+2) a partir de HORARIOS
+const MESNUM = {ene:1,feb:2,mar:3,abr:4,may:5,jun:6,jul:7,ago:8,sep:9,oct:10,nov:11,dic:12};
+function kickoff(id){
+  const h = HORARIOS[id];
+  if(!h || !h.fecha || !h.hora_es) return null;
+  const t = h.hora_es.match(/(\d{1,2}):(\d{2})/);
+  if(!t) return null;
+  let dd, mon;
+  const mad = h.hora_es.match(/madrugada\s+(\d{1,2})\s+([a-zñ]+)/i);
+  if(mad){ dd = +mad[1]; mon = MESNUM[mad[2].slice(0,3).toLowerCase()]; }
+  else {
+    const f = h.fecha.match(/(\d{1,2})\s+([a-zñ]+)/i);
+    if(!f) return null;
+    dd = +f[1]; mon = MESNUM[f[2].slice(0,3).toLowerCase()];
+  }
+  if(!mon) return null;
+  const iso = `2026-${String(mon).padStart(2,"0")}-${String(dd).padStart(2,"0")}T${t[1].padStart(2,"0")}:${t[2]}:00+02:00`;
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+// Cuando arranca el Mundial, la tarjeta muestra los partidos de las próximas 24 h
+function renderProx24(){
+  const ahora = new Date(), lim = new Date(ahora.getTime() + 86400000);
+  const lst = PARTIDOS.map(p => ({p, k:kickoff(p.id)}))
+    .filter(x => x.k && x.k >= ahora && x.k <= lim)
+    .sort((a,b) => a.k - b.k);
+  $("#lbl-inicio").textContent = "Partidos · próximas 24 h";
+  $("#cd-inicio").style.display = "none";
+  $("#sub-inicio").style.display = "none";
+  const box = $("#prox24");
+  box.style.display = "block";
+  if(!lst.length){
+    box.innerHTML = `<div style="font-size:13px;color:var(--faint);padding:6px 0">No hay partidos en las próximas 24 horas.</div>`;
+    return;
+  }
+  box.innerHTML = lst.map(({p}) => {
+    const h = HORARIOS[p.id] || {};
+    const hora = h.hora_es ? (h.hora_es.includes("madrugada") ? h.hora_es : h.hora_es + " h") : "";
+    return `<div class="fx"><div class="fxtop"><span class="fxwhen">${hora}</span>`
+      + `<span class="fl">${p.bl}</span><span class="fxr">${p.l}</span>`
+      + `<span class="vs">–</span>`
+      + `<span class="fl">${p.bv}</span><span class="fxr">${p.v}</span></div></div>`;
+  }).join("");
+  tw(box);
+}
+
 function tickCd(){
+  $("#cd-porra").textContent = fmtCd(PORRA);
+  if(new Date() >= INICIO){
+    renderProx24();
+    return;
+  }
   $("#cd-inicio").textContent = fmtCd(INICIO);
-  $("#cd-porra").textContent  = fmtCd(PORRA);
 }
 
 // ── Buscador ─────────────────────────────────────────────────────
