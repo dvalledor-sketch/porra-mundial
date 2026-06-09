@@ -111,13 +111,27 @@ Guarda `porra_TUNOMBRE_elim.xlsx` en la carpeta `pronosticos/` antes de cada fec
 
 ## Puntuación rápida
 
+### Fase de grupos
 | Concepto                                    | Puntos       |
 | ------------------------------------------- | ------------ |
 | Resultado exacto (goles)                    | 3            |
 | Resultado correcto (ganador o empate a 90') | 2            |
-| Quién pasa de ronda (eliminatorias)         | +1           |
-| MVP / Goleador / Portero del torneo         | +15 cada uno |
 | Fallo                                       | 0            |
+
+### Eliminatorias
+| Concepto                                                     | Puntos       |
+| ------------------------------------------------------------ | ------------ |
+| Resultado exacto al 90' (goles)                              | 3            |
+| Resultado correcto al 90' (ganador o empate)                 | 2            |
+| Equipo que avanza de ronda (col. G) — suma al resto de pts   | +1           |
+| Fallo                                                        | 0            |
+
+> ℹ️ El +1 por equipo que avanza aplica **siempre** en eliminatorias, pero es especialmente relevante cuando predices empate a 90': aunque el resultado sea correcto (2 pts tendencia), si además aciertas quién pasa (p.ej. "empate 1-1, avanza Suecia") te llevas +1 extra.
+
+### Especiales
+| Concepto                            | Puntos       |
+| ----------------------------------- | ------------ |
+| MVP / Goleador / Portero del torneo | +15 cada uno |
 
 **Desempate:** gana quien tenga más resultados exactos (3 pts).
 
