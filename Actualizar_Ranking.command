@@ -9,6 +9,11 @@ cd "$(dirname "$0")"
 # ── CONFIGURACIÓN ─────────────────────────────────────────────
 NETLIFY_TOKEN="nfp_kp6cBifMAgrs9KkZdAkargBP4ryJacLm52ff"
 NETLIFY_SITE_ID="porra-mundial-sdx8u"
+
+# Ruta al CSV sincronizado por Google Drive for Desktop.
+# El Apps Script guarda "respuestas_porra.csv" en una carpeta "Porra Mundial 2026" de Drive.
+# Ajusta la ruta si tu email o ruta de Google Drive es diferente.
+DRIVE_CSV="$HOME/Library/CloudStorage/GoogleDrive-dvalledor@sonamovil.com/Mi unidad/Porra Mundial 2026/respuestas_porra.csv"
 # ──────────────────────────────────────────────────────────────
 
 PY=""
@@ -23,6 +28,14 @@ fi
 echo "▸ Instalando dependencias (sólo la primera vez)…"
 "$PY" -m pip install --quiet --user openpyxl requests >/dev/null 2>&1 || \
 "$PY" -m pip install --quiet --user --break-system-packages openpyxl requests >/dev/null 2>&1 || true
+
+# ── Importar pronósticos desde Google Drive ───────────────────
+if [ -f "$DRIVE_CSV" ]; then
+  echo "▸ Importando pronósticos desde Google Drive…"
+  "$PY" scripts/form_a_xlsx.py "$DRIVE_CSV"
+else
+  echo "▸ (CSV de Drive no encontrado en $DRIVE_CSV — usando plantillas existentes)"
+fi
 
 echo "▸ Generando dataset de partidos…"
 "$PY" scripts/build_matches.py
