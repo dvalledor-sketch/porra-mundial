@@ -398,6 +398,7 @@ footer code{color:var(--muted)}
 
 /* ── Avatar ───────────────────────────────────────────────── */
 .pixel-canvas{image-rendering:pixelated;image-rendering:crisp-edges}
+.flag{font-family:system-ui,-apple-system,sans-serif;letter-spacing:0;font-style:normal;font-weight:normal}
 
 </style>
 <!-- DATOS EMBEBIDOS POR scorer.py · NO EDITAR A MANO -->
@@ -464,7 +465,7 @@ footer code{color:var(--muted)}
       </div>
       <div class="pts-row"><span class="pts-lbl">🎯 Pleno exacto</span><span class="badge bg-green">3 pts</span></div>
       <div class="pts-row"><span class="pts-lbl">📊 Tendencia correcta</span><span class="badge bg-amber">2 pts</span></div>
-      <div class="pts-row"><span class="pts-lbl">➡️ Quién pasa de ronda</span><span class="badge bg-blue">+1 pt</span></div>
+      <div class="pts-row"><span class="pts-lbl">➡️ Quién pasa de clasificación</span><span class="badge bg-blue">+1 pt</span></div>
       <div class="pts-row"><span class="pts-lbl">⭐ MVP / Goleador / Portero</span><span class="badge bg-gold">+15 pts</span></div>
       <div class="pts-row"><span class="pts-lbl">❌ Fallo</span><span class="badge bg-red">0 pts</span></div>
       <p style="font-size:10px;color:var(--faint);margin-top:14px;line-height:1.6">⚠️ Eliminatorias: marcador al min. 90 + descuento. Sin prórroga ni penaltis.</p>
@@ -487,7 +488,7 @@ footer code{color:var(--muted)}
           <th>Alias</th>
           <th>Grupos</th>
           <th>Elim.</th>
-          <th style="color:var(--blue)">Q.Pasa</th>
+          <th style="color:var(--blue)">Clasif.</th>
           <th style="color:var(--gold)">Especiales</th>
           <th style="color:var(--green)">Plenos</th>
           <th style="color:var(--amber)">Tend.</th>
@@ -751,9 +752,9 @@ function renderDetalle() {
         <span>${esc(faseLabel)}</span>
       </div>
       <div class="match-teams">
-        <div class="team-name team-local">${esc(p.local)}${p.bandera_local?' '+p.bandera_local:''}</div>
+        <div class="team-name team-local">${esc(p.local)}${p.bandera_local?' <span class="flag">'+p.bandera_local+'</span>':''}</div>
         ${scoreHtml}
-        <div class="team-name">${p.bandera_visitante?p.bandera_visitante+' ':''}${esc(p.visitante)}</div>
+        <div class="team-name">${p.bandera_visitante?'<span class="flag">'+p.bandera_visitante+'</span> ':''}${esc(p.visitante)}</div>
       </div>
       <details>
         <summary>Ver ${apuestas.length} pronóstico${apuestas.length===1?'':'s'}</summary>
