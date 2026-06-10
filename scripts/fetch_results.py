@@ -44,7 +44,7 @@ NOMBRES: dict[str, str] = {
     "Paraguay": "Paraguay", "Australia": "Australia",
     "Turkey": "Turquía", "Türkiye": "Turquía",
     "Germany": "Alemania", "Curacao": "Curazao",
-    "Costa Rica": "Costa Rica", "Ecuador": "Ecuador",
+    "Ivory Coast": "Costa de Marfil", "Côte d'Ivoire": "Costa de Marfil", "Cote d'Ivoire": "Costa de Marfil", "Ecuador": "Ecuador",
     "Netherlands": "Países Bajos", "Japan": "Japón",
     "Tunisia": "Túnez", "Sweden": "Suecia",
     "Belgium": "Bélgica", "Egypt": "Egipto",

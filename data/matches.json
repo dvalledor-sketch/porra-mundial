@@ -30,7 +30,7 @@
     "E": [
       "Alemania",
       "Curazao",
-      "Costa Rica",
+      "Costa de Marfil",
       "Ecuador"
     ],
     "F": [
@@ -308,7 +308,7 @@
       "grupo": "E",
       "jornada": 1,
       "fecha_aprox": "2026-06-11 / 2026-06-17",
-      "local": "Costa Rica",
+      "local": "Costa de Marfil",
       "visitante": "Ecuador"
     },
     {
@@ -318,7 +318,7 @@
       "jornada": 2,
       "fecha_aprox": "2026-06-15 / 2026-06-22",
       "local": "Alemania",
-      "visitante": "Costa Rica"
+      "visitante": "Costa de Marfil"
     },
     {
       "id": "G-E2-E4",
@@ -345,7 +345,7 @@
       "jornada": 3,
       "fecha_aprox": "2026-06-21 / 2026-06-27",
       "local": "Curazao",
-      "visitante": "Costa Rica"
+      "visitante": "Costa de Marfil"
     },
     {
       "id": "G-F1-F2",

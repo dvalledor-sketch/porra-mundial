@@ -25,7 +25,7 @@ GRUPOS = {
     "B": ["Canadá",        "Suiza",             "Catar",             "Bosnia y Herzegovina"],
     "C": ["Brasil",        "Marruecos",         "Escocia",           "Haití"],
     "D": ["Estados Unidos","Paraguay",          "Australia",         "Turquía"],
-    "E": ["Alemania",      "Curazao",           "Costa Rica",        "Ecuador"],
+    "E": ["Alemania",      "Curazao",           "Costa de Marfil",        "Ecuador"],
     "F": ["Países Bajos",  "Japón",             "Túnez",             "Suecia"],
     "G": ["Bélgica",       "Egipto",            "Irán",              "Nueva Zelanda"],
     "H": ["España",        "Cabo Verde",        "Arabia Saudí",      "Uruguay"],
