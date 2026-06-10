@@ -115,6 +115,19 @@ p.lead{font-family:system-ui,sans-serif;font-size:14px;color:var(--faint);line-h
   border-top:1px solid rgba(26,44,158,.07)}
 .grp .team:first-of-type{border-top:none}
 .grp .team .fl{font-size:18px}
+.grp .team .pos{width:18px;height:18px;border-radius:5px;flex:none;display:inline-flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:700;background:rgba(26,44,158,.10);color:var(--blue-dk)}
+.grp .team .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grp .team .st{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.grp .team.q1{background:rgba(22,163,74,.10)}
+.grp .team.q1 .pos{background:#16a34a;color:#fff}
+.grp .team.q3{background:rgba(255,193,7,.16)}
+.grp .team.q3 .pos{background:var(--gold-dk,#b8860b);color:#fff}
+.grp .team.cand .pos{background:rgba(255,193,7,.30);color:var(--gold-dk,#b8860b)}
+.grp .team.elim{opacity:.55}
+.grp-legend{font-family:system-ui,sans-serif;font-size:11.5px;color:var(--faint);margin:10px 2px 0;line-height:1.7}
+.grp-legend .k{display:inline-flex;align-items:center;gap:5px;margin-right:14px}
+.grp-legend .dot{width:11px;height:11px;border-radius:3px;display:inline-block}
 
 /* Timeline */
 .timeline{position:relative;margin-top:8px;padding-left:8px}
@@ -396,14 +409,72 @@ function renderSedes(){
   });
 }
 
-function renderGrupos(){
+// Clasificación de un grupo a partir de los resultados (id -> [gl,gv])
+function cmpEquipo(a,b){ return b.pts-a.pts || b.gd-a.gd || b.gf-a.gf || a.t.localeCompare(b.t); }
+function clasificacionGrupo(g, resultados){
+  const teams={};
+  EQUIPOS_GRUPO[g].forEach(t=> teams[t]={t, pj:0, pts:0, gf:0, ga:0});
+  PARTIDOS.filter(p=>p.g===g).forEach(p=>{
+    const r = resultados[p.id];
+    if(!r || r[0]==null || r[1]==null) return;
+    const [gl,gv]=r, L=teams[p.l], V=teams[p.v];
+    L.pj++; V.pj++; L.gf+=gl; L.ga+=gv; V.gf+=gv; V.ga+=gl;
+    if(gl>gv) L.pts+=3; else if(gl<gv) V.pts+=3; else { L.pts++; V.pts++; }
+  });
+  return Object.values(teams).map(x=>({...x, gd:x.gf-x.ga})).sort(cmpEquipo);
+}
+
+async function renderGrupos(){
   const cont=$("#groups-cont"); cont.innerHTML="";
+
+  // Intentar cargar resultados reales (data.json en la misma carpeta)
+  let resultados={};
+  try{
+    const r = await fetch("data.json?ts="+Date.now(), {cache:"no-store"});
+    if(r.ok){ const d = await r.json(); resultados = d.resultados || {}; }
+  }catch(e){ /* abierto sin servidor: se muestran los grupos sin clasificación */ }
+
+  const hayResultados = Object.values(resultados).some(v=>v && v[0]!=null);
+
+  // Ranking de los 12 terceros → los 8 mejores se clasifican
+  let mejores8 = new Set();
+  if(hayResultados){
+    const terceros = GRUPOS
+      .map(g=>({g, ...clasificacionGrupo(g, resultados)[2]}))
+      .filter(x=>x.pj>0)
+      .sort(cmpEquipo);
+    mejores8 = new Set(terceros.slice(0,8).map(x=>x.t));
+  }
+
   GRUPOS.forEach(g=>{
     const d=document.createElement("div"); d.className="grp card";
-    const teams=EQUIPOS_GRUPO[g].map(t=>`<div class="team"><span class="fl">${FLAG[t]}</span>${t}</div>`).join("");
-    d.innerHTML=`<div class="gh"><span class="gb">${g}</span><span class="gt">Grupo ${g}</span></div>${teams}`;
+    let filas;
+    if(hayResultados){
+      const tabla = clasificacionGrupo(g, resultados);
+      filas = tabla.map((x,i)=>{
+        let cls="elim", marca="";
+        if(i<2){ cls="q1"; }
+        else if(i===2){ cls = mejores8.has(x.t) ? "q3" : "cand"; }
+        if(i===2 && mejores8.has(x.t)) marca=" ★";
+        const dg = (x.gd>0?"+":"")+x.gd;
+        return `<div class="team ${cls}"><span class="pos">${i+1}</span><span class="fl">${FLAG[x.t]}</span>`
+             + `<span class="nm">${x.t}${marca}</span><span class="st">${x.pts} pt · ${dg}</span></div>`;
+      }).join("");
+    } else {
+      filas = EQUIPOS_GRUPO[g].map(t=>`<div class="team"><span class="fl">${FLAG[t]}</span><span class="nm">${t}</span></div>`).join("");
+    }
+    d.innerHTML=`<div class="gh"><span class="gb">${g}</span><span class="gt">Grupo ${g}</span></div>${filas}`;
     cont.appendChild(d);
   });
+
+  if(hayResultados){
+    const leg=document.createElement("div"); leg.className="grp-legend";
+    leg.innerHTML = `<span class="k"><span class="dot" style="background:#16a34a"></span>1.º y 2.º · clasificados</span>`
+      + `<span class="k"><span class="dot" style="background:var(--gold-dk,#b8860b)"></span>★ 3.º entre los 8 mejores · clasificado</span>`
+      + `<span class="k"><span class="dot" style="background:rgba(255,193,7,.30)"></span>3.º candidato (provisional)</span>`
+      + `<br><span style="opacity:.8">Terceros ordenados por puntos · diferencia de goles · goles a favor. (Conducta y ranking FIFA no se aplican aquí.)</span>`;
+    cont.appendChild(leg);
+  }
   tw(cont);
 }
 

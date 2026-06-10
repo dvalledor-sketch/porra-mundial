@@ -185,10 +185,6 @@ def main() -> None:
     print(f"✓ bracket.json actualizado")
 
 
-if __name__ == "__main__":
-    main()
-
-
 # ── Bracket (eliminatorias) ───────────────────────────────────────────────────
 BRACKET_F = RAIZ / "data" / "bracket.json"
 
@@ -232,3 +228,7 @@ def _fetch_bracket(league_id: int) -> dict[str, list[dict]]:
             print(f"  ⚠️  Error en {fase}: {e}")
             bracket[fase] = []
     return bracket
+
+
+if __name__ == "__main__":
+    main()
