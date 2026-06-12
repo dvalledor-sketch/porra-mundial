@@ -229,6 +229,7 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
 <div class="subnav">
   <div class="in">
     <a href="#buscar">Buscar selección</a>
+    <a href="#proximos">Próximos partidos</a>
     <a href="#cuenta">Cuenta atrás</a>
     <a href="#sedes">Sedes</a>
     <a href="#formato">Formato</a>
@@ -248,6 +249,15 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
       <input id="q" type="text" placeholder="Ej: España, Argentina, Brasil…" autocomplete="off">
     </div>
     <div id="search-res"></div>
+  </section>
+
+  <!-- PRÓXIMOS PARTIDOS -->
+  <section id="proximos">
+    <h2 class="sec"><span class="ic">📅</span> Próximos partidos</h2>
+    <p class="lead">Los próximos 5 partidos del calendario, con fecha y hora (España).</p>
+    <div class="card" style="padding:12px 16px">
+      <div id="prox5"></div>
+    </div>
   </section>
 
   <!-- CUENTA ATRÁS -->
@@ -520,6 +530,32 @@ function kickoff(id){
   return isNaN(d.getTime()) ? null : d;
 }
 
+// ── Próximos 5 partidos del calendario (fecha + hora) ───────────
+function renderProx5(){
+  const ahora = new Date();
+  const lst = PARTIDOS.map(p => ({p, k:kickoff(p.id)}))
+    .filter(x => x.k && x.k >= ahora)
+    .sort((a,b) => a.k - b.k)
+    .slice(0,5);
+  const box = $("#prox5");
+  if(!box) return;
+  if(!lst.length){
+    box.innerHTML = `<div style="font-size:13px;color:var(--faint);padding:6px 0">No quedan partidos de la fase de grupos en el calendario.</div>`;
+    return;
+  }
+  box.innerHTML = lst.map(({p}) => {
+    const h = HORARIOS[p.id] || {};
+    const hora = h.hora_es ? (h.hora_es.includes("madrugada") ? h.hora_es : h.hora_es + " h") : "";
+    const cuando = (h.fecha || "") + (hora ? " · " + hora : "");
+    const sede = h.sede ? `<div class="fxsede">📍 ${h.sede}</div>` : "";
+    return `<div class="fx"><div class="fxtop"><span class="fxwhen">${cuando}</span>`
+      + `<span class="fl">${p.bl}</span><span class="fxr">${p.l}</span>`
+      + `<span class="vs">–</span>`
+      + `<span class="fl">${p.bv}</span><span class="fxr">${p.v}</span></div>${sede}</div>`;
+  }).join("");
+  tw(box);
+}
+
 // Cuando arranca el Mundial, la tarjeta muestra los partidos de las próximas 24 h
 function renderProx24(){
   const ahora = new Date(), lim = new Date(ahora.getTime() + 86400000);
@@ -538,7 +574,8 @@ function renderProx24(){
   box.innerHTML = lst.map(({p}) => {
     const h = HORARIOS[p.id] || {};
     const hora = h.hora_es ? (h.hora_es.includes("madrugada") ? h.hora_es : h.hora_es + " h") : "";
-    return `<div class="fx"><div class="fxtop"><span class="fxwhen">${hora}</span>`
+    const cuando = (h.fecha ? h.fecha + " · " : "") + hora;
+    return `<div class="fx"><div class="fxtop"><span class="fxwhen">${cuando}</span>`
       + `<span class="fl">${p.bl}</span><span class="fxr">${p.l}</span>`
       + `<span class="vs">–</span>`
       + `<span class="fl">${p.bv}</span><span class="fxr">${p.v}</span></div></div>`;
@@ -587,6 +624,7 @@ function buscar(){
 
 // ── Init ─────────────────────────────────────────────────────────
 renderSedes(); renderGrupos(); renderCalendario(); renderBracket();
+renderProx5(); setInterval(renderProx5, 60000);
 tickCd(); setInterval(tickCd, 30000);
 $("#q").addEventListener("input", buscar);
 window.addEventListener("load", ()=>tw(document.body));   // banderas → Twemoji
