@@ -155,10 +155,80 @@ def _update_excel(archivo: Path, resultados: dict[str, tuple[int, int]]) -> int:
     return actualizados
 
 
+def _resultados_existentes() -> set[str]:
+    """IDs de partido que ya tienen resultado en los Excel de resultados reales."""
+    ids: set[str] = set()
+    for archivo in (REALES_F, REALES_ELIM):
+        if not archivo.exists():
+            continue
+        wb = load_workbook(archivo, read_only=True)
+        for ws in wb:
+            for row in ws.iter_rows():
+                cells = [c.value for c in row]
+                padded = cells + [None] * (10 - len(cells))
+                mid, gl, gv = padded[2], padded[3], padded[4]
+                if isinstance(mid, str) and gl is not None and gv is not None:
+                    ids.add(mid.strip())
+    return ids
+
+
+def _toca_llamar() -> tuple[bool, str]:
+    """Decide si hay que llamar a la API: solo cuando un partido debería haber
+    terminado (kickoff + 105 min) y aún no tiene resultado. Así la porra se
+    actualiza al final de cada partido sin quemar la cuota diaria."""
+    import datetime as dt
+    now = dt.datetime.now(dt.timezone.utc)
+
+    if os.environ.get("FORCE_FETCH") == "1" or "--force" in sys.argv:
+        return True, "forzado (FORCE_FETCH / --force)"
+
+    con_resultado = _resultados_existentes()
+
+    # Fase de grupos: horarios oficiales (data/horarios.json, UTC)
+    horarios_f = RAIZ / "data" / "horarios.json"
+    if horarios_f.exists():
+        horarios = json.loads(horarios_f.read_text(encoding="utf-8"))
+        for mid, iso in horarios.items():
+            if mid in con_resultado:
+                continue
+            k = dt.datetime.fromisoformat(iso)
+            if k + dt.timedelta(minutes=105) <= now <= k + dt.timedelta(hours=6):
+                return True, f"{mid} debería haber terminado (kickoff {iso})"
+
+    # Eliminatorias: fechas reales del bracket descargado de la API
+    if BRACKET_F.exists():
+        try:
+            rounds = json.loads(BRACKET_F.read_text(encoding="utf-8")).get("rounds", {})
+        except Exception:
+            rounds = {}
+        for fixes in rounds.values():
+            for f in fixes:
+                if f.get("status") in ("FT", "AET", "PEN") or not f.get("date"):
+                    continue
+                try:
+                    k = dt.datetime.fromisoformat(f["date"])
+                except ValueError:
+                    continue
+                if k + dt.timedelta(minutes=105) <= now <= k + dt.timedelta(hours=7):
+                    return True, f"{f.get('team1')}–{f.get('team2')} debería haber terminado"
+
+    # Red de seguridad: una pasada completa al día (06:00–06:14 UTC)
+    if now.hour == 6 and now.minute < 15:
+        return True, "pasada diaria de seguridad (06:00 UTC)"
+
+    return False, ""
+
+
 def main() -> None:
     if not API_KEY:
         print("✘ Variable FOOTBALL_API_KEY no definida. Saliendo.")
         sys.exit(1)
+
+    toca, motivo = _toca_llamar()
+    if not toca:
+        print("▸ Ningún partido ha terminado desde la última actualización — no llamo a la API.")
+        return
+    print(f"▸ Llamando a la API · motivo: {motivo}")
 
     print("▸ Buscando Mundial 2026 en API-Football…")
     league_id = _find_wc_league()
