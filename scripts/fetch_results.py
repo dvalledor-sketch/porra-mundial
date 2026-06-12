@@ -75,7 +75,13 @@ def _api_get(endpoint: str, params: dict) -> dict:
         timeout=15,
     )
     r.raise_for_status()
-    return r.json()
+    data = r.json()
+    # API-Football devuelve HTTP 200 con un campo "errors" cuando algo falla
+    # (clave inválida, plan sin acceso a la temporada, cuota diaria agotada…).
+    errors = data.get("errors")
+    if errors and (not isinstance(errors, (list, dict)) or len(errors) > 0):
+        raise RuntimeError(f"API-Football devolvió errores: {errors}")
+    return data
 
 
 def _find_wc_league() -> int:
@@ -91,13 +97,23 @@ def _build_match_index() -> dict[tuple[str, str], str]:
     return {(m["local"], m["visitante"]): m["id"] for m in data["partidos"]}
 
 
-def _get_fixtures(league_id: int) -> list[dict]:
-    """Devuelve todos los partidos del Mundial 2026 ya jugados."""
-    data = _api_get(
-        "fixtures",
-        {"league": WC_LEAGUE, "season": WC_SEASON, "status": "FT-AET-PEN"},
-    )
+def _get_all_fixtures(league_id: int) -> list[dict]:
+    """Devuelve TODOS los fixtures del Mundial 2026 en una sola llamada.
+
+    Una única petición (en vez de 1 por ronda) para no agotar la cuota
+    diaria del plan gratuito de API-Football (100 peticiones/día).
+    """
+    data = _api_get("fixtures", {"league": league_id, "season": WC_SEASON})
     return data.get("response", [])
+
+
+FINISHED = {"FT", "AET", "PEN"}
+
+
+def _get_fixtures(all_fixtures: list[dict]) -> list[dict]:
+    """Filtra los partidos ya terminados."""
+    return [f for f in all_fixtures
+            if f["fixture"]["status"]["short"] in FINISHED]
 
 
 def _update_excel(archivo: Path, resultados: dict[str, tuple[int, int]]) -> int:
@@ -146,8 +162,15 @@ def main() -> None:
 
     print("▸ Buscando Mundial 2026 en API-Football…")
     league_id = _find_wc_league()
-    print("▸ Descargando partidos terminados…")
-    fixtures = _get_fixtures(league_id)
+    print("▸ Descargando fixtures (1 sola llamada)…")
+    all_fixtures = _get_all_fixtures(league_id)
+    print(f"  {len(all_fixtures)} fixtures totales")
+    if not all_fixtures:
+        print("✘ La API devolvió 0 fixtures sin reportar error explícito.")
+        print("  Revisa en https://dashboard.api-football.com que tu plan")
+        print("  cubre la temporada 2026 y que queda cuota diaria.")
+        sys.exit(1)
+    fixtures = _get_fixtures(all_fixtures)
     print(f"  {len(fixtures)} partidos terminados")
 
     idx = _build_match_index()
@@ -174,8 +197,8 @@ def main() -> None:
     total    = n_grupos + n_elim
     print(f"✓ Excel actualizado — {total} celdas nuevas")
 
-    print("▸ Descargando cuadro eliminatorio…")
-    bracket = _fetch_bracket(league_id)
+    print("▸ Construyendo cuadro eliminatorio…")
+    bracket = _build_bracket(all_fixtures)
     import datetime as _dt
     BRACKET_F.write_text(
         json.dumps({"updated": _dt.datetime.utcnow().isoformat(), "rounds": bracket},
@@ -200,33 +223,27 @@ ROUND_MAP: dict[str, str] = {
 ROUND_ORDER = ["ronda_32", "octavos", "cuartos", "semifinales", "final", "tercer_puesto"]
 
 
-def _fetch_bracket(league_id: int) -> dict[str, list[dict]]:
-    """Descarga los fixtures de todas las rondas eliminatorias."""
-    bracket: dict[str, list[dict]] = {}
-    for fase, api_round in ROUND_MAP.items():
-        try:
-            data = _api_get("fixtures", {
-                "league": league_id,
-                "season": WC_SEASON,
-                "round":  api_round,
-            })
-            fixes = data.get("response", [])
-            bracket[fase] = [
-                {
-                    "fixture_id": f["fixture"]["id"],
-                    "date":       f["fixture"]["date"],
-                    "status":     f["fixture"]["status"]["short"],
-                    "team1":      _es(f["teams"]["home"]["name"]),
-                    "team2":      _es(f["teams"]["away"]["name"]),
-                    "score1":     (f.get("goals") or {}).get("home") or f["score"]["fulltime"]["home"],
-                    "score2":     (f.get("goals") or {}).get("away") or f["score"]["fulltime"]["away"],
-                }
-                for f in fixes
-            ]
-            print(f"  {fase}: {len(fixes)} partidos")
-        except Exception as e:
-            print(f"  ⚠️  Error en {fase}: {e}")
-            bracket[fase] = []
+def _build_bracket(all_fixtures: list[dict]) -> dict[str, list[dict]]:
+    """Construye el cuadro eliminatorio a partir de los fixtures ya descargados
+    (sin llamadas extra a la API)."""
+    bracket: dict[str, list[dict]] = {fase: [] for fase in ROUND_MAP}
+    round_to_fase = {api_round: fase for fase, api_round in ROUND_MAP.items()}
+    for f in all_fixtures:
+        fase = round_to_fase.get(f.get("league", {}).get("round", ""))
+        if not fase:
+            continue
+        bracket[fase].append({
+            "fixture_id": f["fixture"]["id"],
+            "date":       f["fixture"]["date"],
+            "status":     f["fixture"]["status"]["short"],
+            "team1":      _es(f["teams"]["home"]["name"]),
+            "team2":      _es(f["teams"]["away"]["name"]),
+            "score1":     (f.get("goals") or {}).get("home") or f["score"]["fulltime"]["home"],
+            "score2":     (f.get("goals") or {}).get("away") or f["score"]["fulltime"]["away"],
+        })
+    for fase, fixes in bracket.items():
+        fixes.sort(key=lambda x: x["date"] or "")
+        print(f"  {fase}: {len(fixes)} partidos")
     return bracket
 
 
