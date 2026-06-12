@@ -1,0 +1,305 @@
+{
+  "updated": "2026-06-12T07:32:40.652641+00:00",
+  "rounds": {
+    "ronda_32": [
+      {
+        "fixture_id": 537417,
+        "date": "2026-06-28T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537423,
+        "date": "2026-06-29T17:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537415,
+        "date": "2026-06-29T20:30:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537418,
+        "date": "2026-06-30T01:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537424,
+        "date": "2026-06-30T17:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537416,
+        "date": "2026-06-30T21:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537425,
+        "date": "2026-07-01T01:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537426,
+        "date": "2026-07-01T16:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537422,
+        "date": "2026-07-01T20:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537421,
+        "date": "2026-07-02T00:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537420,
+        "date": "2026-07-02T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537419,
+        "date": "2026-07-02T23:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537429,
+        "date": "2026-07-03T03:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537428,
+        "date": "2026-07-03T18:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537427,
+        "date": "2026-07-03T22:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537430,
+        "date": "2026-07-04T01:30:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      }
+    ],
+    "octavos": [
+      {
+        "fixture_id": 537376,
+        "date": "2026-07-04T17:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537375,
+        "date": "2026-07-04T21:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537377,
+        "date": "2026-07-05T20:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537378,
+        "date": "2026-07-06T00:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537379,
+        "date": "2026-07-06T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537380,
+        "date": "2026-07-07T00:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537381,
+        "date": "2026-07-07T16:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537382,
+        "date": "2026-07-07T20:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      }
+    ],
+    "cuartos": [
+      {
+        "fixture_id": 537383,
+        "date": "2026-07-09T20:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537384,
+        "date": "2026-07-10T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537385,
+        "date": "2026-07-11T21:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537386,
+        "date": "2026-07-12T01:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      }
+    ],
+    "semifinales": [
+      {
+        "fixture_id": 537387,
+        "date": "2026-07-14T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      },
+      {
+        "fixture_id": 537388,
+        "date": "2026-07-15T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      }
+    ],
+    "tercer_puesto": [
+      {
+        "fixture_id": 537389,
+        "date": "2026-07-18T21:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      }
+    ],
+    "final": [
+      {
+        "fixture_id": 537390,
+        "date": "2026-07-19T19:00:00Z",
+        "status": "NS",
+        "team1": "?",
+        "team2": "?",
+        "score1": null,
+        "score2": null
+      }
+    ]
+  }
+}
