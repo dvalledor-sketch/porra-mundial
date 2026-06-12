@@ -1,12 +1,17 @@
 """
-fetch_results.py — descarga resultados del Mundial 2026 desde API-Football
+fetch_results.py — descarga resultados del Mundial 2026 desde football-data.org
 y actualiza data/resultados_reales.xlsx automáticamente.
 
-Requiere la variable de entorno FOOTBALL_API_KEY con tu clave de api-sports.io
-(cuenta gratuita: https://dashboard.api-football.com/register).
+Requiere la variable de entorno FOOTBALL_DATA_TOKEN con tu token de
+https://www.football-data.org/client/register (el plan gratuito incluye
+el Mundial; límite 10 peticiones/minuto, de sobra).
+
+Solo llama a la API cuando un partido debería haber terminado y aún no
+tiene resultado (ver _toca_llamar). FORCE_FETCH=1 o --force fuerzan la
+llamada (p. ej. en ejecuciones manuales del workflow).
 
 Uso manual:
-    FOOTBALL_API_KEY=xxx python scripts/fetch_results.py
+    FOOTBALL_DATA_TOKEN=xxx python scripts/fetch_results.py [--force]
 """
 
 from __future__ import annotations
@@ -24,11 +29,13 @@ RAIZ        = Path(__file__).resolve().parent.parent
 MATCHES_F   = RAIZ / "data" / "matches.json"
 REALES_F    = RAIZ / "data" / "resultados_reales.xlsx"
 REALES_ELIM = RAIZ / "data" / "resultados_reales_elim.xlsx"
+BRACKET_F   = RAIZ / "data" / "bracket.json"
+HORARIOS_F  = RAIZ / "data" / "horarios.json"
 
-API_BASE    = "https://v3.football.api-sports.io"
-API_KEY     = os.environ.get("FOOTBALL_API_KEY", "")
-WC_LEAGUE   = 1      # FIFA World Cup — id fijo según docs oficiales
-WC_SEASON   = 2026
+# ── API (football-data.org v4) ────────────────────────────────────────────────
+API_BASE    = "https://api.football-data.org/v4"
+API_TOKEN   = os.environ.get("FOOTBALL_DATA_TOKEN", "")
+COMPETITION = "WC"   # FIFA World Cup
 
 # ── mapeo nombre API (inglés) → nombre interno (español) ──────────────────────
 NOMBRES: dict[str, str] = {
@@ -43,20 +50,21 @@ NOMBRES: dict[str, str] = {
     "USA": "Estados Unidos", "United States": "Estados Unidos",
     "Paraguay": "Paraguay", "Australia": "Australia",
     "Turkey": "Turquía", "Türkiye": "Turquía",
-    "Germany": "Alemania", "Curacao": "Curazao",
-    "Ivory Coast": "Costa de Marfil", "Côte d'Ivoire": "Costa de Marfil", "Cote d'Ivoire": "Costa de Marfil", "Ecuador": "Ecuador",
+    "Germany": "Alemania", "Curacao": "Curazao", "Curaçao": "Curazao",
+    "Ivory Coast": "Costa de Marfil", "Côte d'Ivoire": "Costa de Marfil",
+    "Cote d'Ivoire": "Costa de Marfil", "Ecuador": "Ecuador",
     "Netherlands": "Países Bajos", "Japan": "Japón",
     "Tunisia": "Túnez", "Sweden": "Suecia",
     "Belgium": "Bélgica", "Egypt": "Egipto",
-    "Iran": "Irán", "New Zealand": "Nueva Zelanda",
-    "Spain": "España", "Cape Verde": "Cabo Verde",
+    "Iran": "Irán", "IR Iran": "Irán", "New Zealand": "Nueva Zelanda",
+    "Spain": "España", "Cape Verde": "Cabo Verde", "Cabo Verde": "Cabo Verde",
     "Saudi Arabia": "Arabia Saudí", "Uruguay": "Uruguay",
     "France": "Francia", "Senegal": "Senegal",
     "Norway": "Noruega", "Iraq": "Irak",
     "Argentina": "Argentina", "Algeria": "Argelia",
     "Austria": "Austria", "Jordan": "Jordania",
     "Portugal": "Portugal", "Colombia": "Colombia",
-    "Uzbekistan": "Uzbekistán", "DR Congo": "RD Congo",
+    "Uzbekistan": "Uzbekistán", "DR Congo": "RD Congo", "Congo DR": "RD Congo",
     "England": "Inglaterra", "Croatia": "Croacia",
     "Ghana": "Ghana", "Panama": "Panamá", "Panamá": "Panamá",
 }
@@ -67,27 +75,39 @@ def _es(api_name: str) -> str:
     return NOMBRES.get(api_name, api_name)
 
 
-def _api_get(endpoint: str, params: dict) -> dict:
+def _equipo_es(team: dict) -> str:
+    """Nombre español a partir del objeto team de la API (name o shortName)."""
+    for key in ("name", "shortName"):
+        n = team.get(key)
+        if n and n in NOMBRES:
+            return NOMBRES[n]
+    return team.get("name") or team.get("shortName") or "?"
+
+
+def _api_get(endpoint: str, params: dict | None = None) -> dict:
     r = requests.get(
         f"{API_BASE}/{endpoint}",
-        headers={"x-apisports-key": API_KEY},
-        params=params,
-        timeout=15,
+        headers={"X-Auth-Token": API_TOKEN},
+        params=params or {},
+        timeout=20,
     )
-    r.raise_for_status()
-    data = r.json()
-    # API-Football devuelve HTTP 200 con un campo "errors" cuando algo falla
-    # (clave inválida, plan sin acceso a la temporada, cuota diaria agotada…).
-    errors = data.get("errors")
-    if errors and (not isinstance(errors, (list, dict)) or len(errors) > 0):
-        raise RuntimeError(f"API-Football devolvió errores: {errors}")
-    return data
+    if r.status_code != 200:
+        # football-data devuelve {"message": "...", "errorCode": ...} en errores
+        try:
+            detalle = r.json().get("message", r.text[:200])
+        except Exception:
+            detalle = r.text[:200]
+        raise RuntimeError(f"football-data.org HTTP {r.status_code}: {detalle}")
+    return r.json()
 
 
-def _find_wc_league() -> int:
-    """Devuelve el league_id del Mundial 2026 (siempre 1 según docs oficiales)."""
-    print(f"✓ Mundial 2026 — league_id={WC_LEAGUE}, season={WC_SEASON}")
-    return WC_LEAGUE
+def _get_all_matches() -> list[dict]:
+    """Devuelve TODOS los partidos del Mundial 2026 en una sola llamada."""
+    data = _api_get(f"competitions/{COMPETITION}/matches")
+    return data.get("matches", [])
+
+
+TERMINADO = {"FINISHED", "AWARDED"}
 
 
 def _build_match_index() -> dict[tuple[str, str], str]:
@@ -95,25 +115,6 @@ def _build_match_index() -> dict[tuple[str, str], str]:
     with open(MATCHES_F, encoding="utf-8") as f:
         data = json.load(f)
     return {(m["local"], m["visitante"]): m["id"] for m in data["partidos"]}
-
-
-def _get_all_fixtures(league_id: int) -> list[dict]:
-    """Devuelve TODOS los fixtures del Mundial 2026 en una sola llamada.
-
-    Una única petición (en vez de 1 por ronda) para no agotar la cuota
-    diaria del plan gratuito de API-Football (100 peticiones/día).
-    """
-    data = _api_get("fixtures", {"league": league_id, "season": WC_SEASON})
-    return data.get("response", [])
-
-
-FINISHED = {"FT", "AET", "PEN"}
-
-
-def _get_fixtures(all_fixtures: list[dict]) -> list[dict]:
-    """Filtra los partidos ya terminados."""
-    return [f for f in all_fixtures
-            if f["fixture"]["status"]["short"] in FINISHED]
 
 
 def _update_excel(archivo: Path, resultados: dict[str, tuple[int, int]]) -> int:
@@ -175,7 +176,7 @@ def _resultados_existentes() -> set[str]:
 def _toca_llamar() -> tuple[bool, str]:
     """Decide si hay que llamar a la API: solo cuando un partido debería haber
     terminado (kickoff + 105 min) y aún no tiene resultado. Así la porra se
-    actualiza al final de cada partido sin quemar la cuota diaria."""
+    actualiza al final de cada partido sin abusar de la API."""
     import datetime as dt
     now = dt.datetime.now(dt.timezone.utc)
 
@@ -185,9 +186,8 @@ def _toca_llamar() -> tuple[bool, str]:
     con_resultado = _resultados_existentes()
 
     # Fase de grupos: horarios oficiales (data/horarios.json, UTC)
-    horarios_f = RAIZ / "data" / "horarios.json"
-    if horarios_f.exists():
-        horarios = json.loads(horarios_f.read_text(encoding="utf-8"))
+    if HORARIOS_F.exists():
+        horarios = json.loads(HORARIOS_F.read_text(encoding="utf-8"))
         for mid, iso in horarios.items():
             if mid in con_resultado:
                 continue
@@ -206,7 +206,7 @@ def _toca_llamar() -> tuple[bool, str]:
                 if f.get("status") in ("FT", "AET", "PEN") or not f.get("date"):
                     continue
                 try:
-                    k = dt.datetime.fromisoformat(f["date"])
+                    k = dt.datetime.fromisoformat(f["date"].replace("Z", "+00:00"))
                 except ValueError:
                     continue
                 if k + dt.timedelta(minutes=105) <= now <= k + dt.timedelta(hours=7):
@@ -219,9 +219,58 @@ def _toca_llamar() -> tuple[bool, str]:
     return False, ""
 
 
+# ── Bracket (eliminatorias) ───────────────────────────────────────────────────
+# stage de football-data → fase interna de la porra
+STAGE_MAP: dict[str, str] = {
+    "LAST_32":        "ronda_32",
+    "LAST_16":        "octavos",
+    "QUARTER_FINALS": "cuartos",
+    "SEMI_FINALS":    "semifinales",
+    "THIRD_PLACE":    "tercer_puesto",
+    "FINAL":          "final",
+}
+
+# status de football-data → status corto que entiende el dashboard
+STATUS_MAP: dict[str, str] = {
+    "FINISHED": "FT", "AWARDED": "FT",
+    "IN_PLAY": "LIVE", "PAUSED": "LIVE",
+    "TIMED": "NS", "SCHEDULED": "NS",
+    "POSTPONED": "PST", "SUSPENDED": "SUSP", "CANCELLED": "CANC",
+}
+
+
+def _goles(m: dict) -> tuple[int | None, int | None]:
+    ft = (m.get("score") or {}).get("fullTime") or {}
+    return ft.get("home"), ft.get("away")
+
+
+def _build_bracket(all_matches: list[dict]) -> dict[str, list[dict]]:
+    """Construye el cuadro eliminatorio a partir de los partidos descargados."""
+    bracket: dict[str, list[dict]] = {fase: [] for fase in STAGE_MAP.values()}
+    for m in all_matches:
+        fase = STAGE_MAP.get(m.get("stage", ""))
+        if not fase:
+            continue
+        gl, gv = _goles(m)
+        bracket[fase].append({
+            "fixture_id": m.get("id"),
+            "date":       m.get("utcDate"),
+            "status":     STATUS_MAP.get(m.get("status", ""), m.get("status", "")),
+            "team1":      _equipo_es(m.get("homeTeam") or {}),
+            "team2":      _equipo_es(m.get("awayTeam") or {}),
+            "score1":     gl,
+            "score2":     gv,
+        })
+    for fase, fixes in bracket.items():
+        fixes.sort(key=lambda x: x["date"] or "")
+        print(f"  {fase}: {len(fixes)} partidos")
+    return bracket
+
+
 def main() -> None:
-    if not API_KEY:
-        print("✘ Variable FOOTBALL_API_KEY no definida. Saliendo.")
+    if not API_TOKEN:
+        print("✘ Variable FOOTBALL_DATA_TOKEN no definida. Saliendo.")
+        print("  Regístrate gratis en https://www.football-data.org/client/register")
         sys.exit(1)
 
     toca, motivo = _toca_llamar()
@@ -230,28 +279,23 @@ def main() -> None:
         return
     print(f"▸ Llamando a la API · motivo: {motivo}")
 
-    print("▸ Buscando Mundial 2026 en API-Football…")
-    league_id = _find_wc_league()
-    print("▸ Descargando fixtures (1 sola llamada)…")
-    all_fixtures = _get_all_fixtures(league_id)
-    print(f"  {len(all_fixtures)} fixtures totales")
-    if not all_fixtures:
-        print("✘ La API devolvió 0 fixtures sin reportar error explícito.")
-        print("  Revisa en https://dashboard.api-football.com que tu plan")
-        print("  cubre la temporada 2026 y que queda cuota diaria.")
+    print("▸ Descargando partidos del Mundial 2026 (football-data.org, 1 llamada)…")
+    all_matches = _get_all_matches()
+    print(f"  {len(all_matches)} partidos totales")
+    if not all_matches:
+        print("✘ La API devolvió 0 partidos. Revisa el token en football-data.org.")
         sys.exit(1)
-    fixtures = _get_fixtures(all_fixtures)
-    print(f"  {len(fixtures)} partidos terminados")
+
+    terminados = [m for m in all_matches if m.get("status") in TERMINADO]
+    print(f"  {len(terminados)} partidos terminados")
 
     idx = _build_match_index()
     resultados: dict[str, tuple[int, int]] = {}
 
-    for fix in fixtures:
-        home = _es(fix["teams"]["home"]["name"])
-        away = _es(fix["teams"]["away"]["name"])
-        # goals.home/away es el campo estándar; score.fulltime como fallback
-        gl   = fix.get("goals", {}).get("home") or fix["score"]["fulltime"]["home"]
-        gv   = fix.get("goals", {}).get("away") or fix["score"]["fulltime"]["away"]
+    for m in terminados:
+        home = _equipo_es(m.get("homeTeam") or {})
+        away = _equipo_es(m.get("awayTeam") or {})
+        gl, gv = _goles(m)
         if gl is None or gv is None:
             continue
         match_id = idx.get((home, away))
@@ -268,53 +312,14 @@ def main() -> None:
     print(f"✓ Excel actualizado — {total} celdas nuevas")
 
     print("▸ Construyendo cuadro eliminatorio…")
-    bracket = _build_bracket(all_fixtures)
+    bracket = _build_bracket(all_matches)
     import datetime as _dt
     BRACKET_F.write_text(
-        json.dumps({"updated": _dt.datetime.utcnow().isoformat(), "rounds": bracket},
+        json.dumps({"updated": _dt.datetime.now(_dt.timezone.utc).isoformat(), "rounds": bracket},
                    ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
-    print(f"✓ bracket.json actualizado")
-
-
-# ── Bracket (eliminatorias) ───────────────────────────────────────────────────
-BRACKET_F = RAIZ / "data" / "bracket.json"
-
-ROUND_MAP: dict[str, str] = {
-    "ronda_32":      "Round of 32",
-    "octavos":       "Round of 16",
-    "cuartos":       "Quarter-finals",
-    "semifinales":   "Semi-finals",
-    "tercer_puesto": "3rd Place Final",
-    "final":         "Final",
-}
-
-ROUND_ORDER = ["ronda_32", "octavos", "cuartos", "semifinales", "final", "tercer_puesto"]
-
-
-def _build_bracket(all_fixtures: list[dict]) -> dict[str, list[dict]]:
-    """Construye el cuadro eliminatorio a partir de los fixtures ya descargados
-    (sin llamadas extra a la API)."""
-    bracket: dict[str, list[dict]] = {fase: [] for fase in ROUND_MAP}
-    round_to_fase = {api_round: fase for fase, api_round in ROUND_MAP.items()}
-    for f in all_fixtures:
-        fase = round_to_fase.get(f.get("league", {}).get("round", ""))
-        if not fase:
-            continue
-        bracket[fase].append({
-            "fixture_id": f["fixture"]["id"],
-            "date":       f["fixture"]["date"],
-            "status":     f["fixture"]["status"]["short"],
-            "team1":      _es(f["teams"]["home"]["name"]),
-            "team2":      _es(f["teams"]["away"]["name"]),
-            "score1":     (f.get("goals") or {}).get("home") or f["score"]["fulltime"]["home"],
-            "score2":     (f.get("goals") or {}).get("away") or f["score"]["fulltime"]["away"],
-        })
-    for fase, fixes in bracket.items():
-        fixes.sort(key=lambda x: x["date"] or "")
-        print(f"  {fase}: {len(fixes)} partidos")
-    return bracket
+    print("✓ bracket.json actualizado")
 
 
 if __name__ == "__main__":

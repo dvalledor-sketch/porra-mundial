@@ -38,11 +38,16 @@ git push -u origin main
 
 ---
 
-## Paso 2 — Obtener la API key gratuita de API-Football
+## Paso 2 — Obtener el token gratuito de football-data.org
 
-1. Regístrate en https://dashboard.api-football.com/register (gratis)
-2. Ve a **My Account → API Keys**
-3. Copia tu clave (formato `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
+1. Regístrate en https://www.football-data.org/client/register (gratis; el plan
+   gratuito incluye el Mundial)
+2. Recibirás el token (`X-Auth-Token`) por email / en tu área de cliente
+3. Copia el token
+
+> Nota: antes se usaba API-Football, pero su plan gratuito no da acceso a la
+> temporada 2026. football-data.org sí la incluye gratis (resultados con unos
+> minutos de retraso, suficiente porque solo consultamos al final del partido).
 
 ---
 
@@ -50,8 +55,8 @@ git push -u origin main
 
 En GitHub: **Settings → Secrets and variables → Actions → New repository secret**
 
-- Nombre: `FOOTBALL_API_KEY`
-- Valor: tu clave de API-Football
+- Nombre: `FOOTBALL_DATA_TOKEN`
+- Valor: tu token de football-data.org
 
 ---
 

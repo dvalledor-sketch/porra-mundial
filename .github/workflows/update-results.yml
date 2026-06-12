@@ -34,9 +34,9 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python scripts/supabase_pull.py
 
-      - name: Descargar resultados de API-Football
+      - name: Descargar resultados de football-data.org
         env:
-          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
           FORCE_FETCH: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
         run: python scripts/fetch_results.py
 
