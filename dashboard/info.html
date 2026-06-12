@@ -105,19 +105,28 @@ p.lead{font-family:system-ui,sans-serif;font-size:14px;color:var(--faint);line-h
 .note-box li{margin:2px 0}
 
 /* Groups */
-.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
 .grp{padding:12px 14px}
 .grp .gh{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .grp .gb{width:26px;height:26px;border-radius:7px;background:var(--blue);color:#fff;display:inline-flex;
   align-items:center;justify-content:center;font-weight:700;font-size:14px}
 .grp .gt{font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--blue-dk);font-weight:700}
-.grp .team{display:flex;align-items:center;gap:8px;padding:4px 0;font-family:system-ui,sans-serif;font-size:13.5px;
-  border-top:1px solid rgba(26,44,158,.07)}
+.grp .team{display:grid;grid-template-columns:18px 22px 1fr auto auto auto;align-items:center;gap:5px;
+  padding:5px 2px;font-family:system-ui,sans-serif;font-size:13px;
+  border-top:1px solid rgba(26,44,158,.07);border-radius:4px}
 .grp .team:first-of-type{border-top:none}
-.grp .team .fl{font-size:18px}
+.grp .team .fl{font-size:16px;text-align:center}
 .grp .team .pos{width:18px;height:18px;border-radius:5px;flex:none;display:inline-flex;align-items:center;
   justify-content:center;font-size:11px;font-weight:700;background:rgba(26,44,158,.10);color:var(--blue-dk)}
-.grp .team .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grp .team .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
+.grp .team .st-pj{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;text-align:right;min-width:16px}
+.grp .team .st-pts{font-size:12px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;text-align:right;min-width:18px}
+.grp .team .st-gd{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;text-align:right;min-width:24px}
+.grp-col-hdr{display:grid;grid-template-columns:18px 22px 1fr auto auto auto;gap:5px;
+  padding:3px 2px 5px;border-bottom:1px solid rgba(26,44,158,.12);margin-bottom:2px}
+.grp-col-hdr span{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--faint);font-family:system-ui,sans-serif}
+.grp-col-hdr .h-pj,.grp-col-hdr .h-pts,.grp-col-hdr .h-gd{text-align:right}
 .grp .team .st{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
 .grp .team.q1{background:rgba(22,163,74,.10)}
 .grp .team.q1 .pos{background:#16a34a;color:#fff}
@@ -228,27 +237,24 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
 
 <div class="subnav">
   <div class="in">
-    <a href="#buscar">Buscar selección</a>
-    <a href="#proximos">Próximos partidos</a>
-    <a href="#cuenta">Cuenta atrás</a>
-    <a href="#sedes">Sedes</a>
-    <a href="#formato">Formato</a>
     <a href="#grupos">Grupos</a>
-    <a href="#calendario">Calendario</a>
+    <a href="#proximos">Próximos partidos</a>
     <a href="#cuadro">Eliminatorias</a>
+    <a href="#calendario">Calendario</a>
+    <a href="#formato">Formato</a>
+    <a href="#sedes">Sedes</a>
+    <a href="#cuenta">Cuenta atrás</a>
+    <a href="#buscar">Buscar selección</a>
   </div>
 </div>
 
 <div class="wrap">
 
-  <!-- BUSCAR -->
-  <section id="buscar">
-    <h2 class="sec"><span class="ic">🔎</span> Buscar selección</h2>
-    <p class="lead">Escribe una selección para ver su grupo y sus 3 partidos de la fase de grupos, con <b>fecha, hora (España) y sede</b>. Ordenados por fecha.</p>
-    <div class="search">
-      <input id="q" type="text" placeholder="Ej: España, Argentina, Brasil…" autocomplete="off">
-    </div>
-    <div id="search-res"></div>
+  <!-- GRUPOS -->
+  <section id="grupos">
+    <h2 class="sec"><span class="ic">🔤</span> Los 12 grupos</h2>
+    <p class="lead">Composición de la porra. Cada selección juega 3 partidos contra el resto de su grupo.</p>
+    <div class="groups" id="groups-cont"></div>
   </section>
 
   <!-- PRÓXIMOS PARTIDOS -->
@@ -260,28 +266,21 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
     </div>
   </section>
 
-  <!-- CUENTA ATRÁS -->
-  <section id="cuenta">
-    <div class="counts">
-      <div class="count card" id="card-inicio">
-        <div class="lbl" id="lbl-inicio">Arranque del Mundial</div>
-        <div class="big" id="cd-inicio">—</div>
-        <div class="sub" id="sub-inicio">11 jun 2026 · México–Sudáfrica · Estadio Azteca</div>
-        <div id="prox24" style="display:none"></div>
-      </div>
-      <div class="count card">
-        <div class="lbl">Cierre de la porra (fase de grupos)</div>
-        <div class="big" id="cd-porra">—</div>
-        <div class="sub">Rellena antes del 11 jun · 17:00 h (España)</div>
-      </div>
-    </div>
+  <!-- CUADRO -->
+  <section id="cuadro">
+    <h2 class="sec"><span class="ic">🏆</span> Eliminatorias</h2>
+    <p class="lead">Eliminación directa desde la Ronda de 32 hasta la final.</p>
+    <div class="bracket" id="bracket"></div>
   </section>
 
-  <!-- SEDES -->
-  <section id="sedes">
-    <h2 class="sec"><span class="ic">🏟️</span> Sedes y estadios</h2>
-    <p class="lead">16 estadios en 3 países: 11 en Estados Unidos, 3 en México y 2 en Canadá. EE. UU. acoge 78 partidos (incluidos desde cuartos); México y Canadá, 13 cada uno.</p>
-    <div id="venues-cont"></div>
+
+  <!-- CALENDARIO -->
+  <section id="calendario">
+    <h2 class="sec"><span class="ic">📅</span> Calendario · fechas clave</h2>
+    <p class="lead">Del partido inaugural en el Azteca a la final en el MetLife.</p>
+    <div class="card" style="padding:6px 16px">
+      <div class="timeline" id="timeline"></div>
+    </div>
   </section>
 
   <!-- FORMATO -->
@@ -305,29 +304,39 @@ img.emoji{height:1em;width:auto;vertical-align:-0.125em;margin:0 .04em;display:i
     </div>
   </section>
 
-  <!-- GRUPOS -->
-  <section id="grupos">
-    <h2 class="sec"><span class="ic">🔤</span> Los 12 grupos</h2>
-    <p class="lead">Composición de la porra. Cada selección juega 3 partidos contra el resto de su grupo.</p>
-    <div class="groups" id="groups-cont"></div>
+  <!-- SEDES -->
+  <section id="sedes">
+    <h2 class="sec"><span class="ic">🏟️</span> Sedes y estadios</h2>
+    <p class="lead">16 estadios en 3 países: 11 en Estados Unidos, 3 en México y 2 en Canadá. EE. UU. acoge 78 partidos (incluidos desde cuartos); México y Canadá, 13 cada uno.</p>
+    <div id="venues-cont"></div>
   </section>
 
-  <!-- CALENDARIO -->
-  <section id="calendario">
-    <h2 class="sec"><span class="ic">📅</span> Calendario · fechas clave</h2>
-    <p class="lead">Del partido inaugural en el Azteca a la final en el MetLife.</p>
-    <div class="card" style="padding:6px 16px">
-      <div class="timeline" id="timeline"></div>
+  <!-- CUENTA ATRÁS -->
+  <section id="cuenta">
+    <div class="counts">
+      <div class="count card" id="card-inicio">
+        <div class="lbl" id="lbl-inicio">Arranque del Mundial</div>
+        <div class="big" id="cd-inicio">—</div>
+        <div class="sub" id="sub-inicio">11 jun 2026 · México–Sudáfrica · Estadio Azteca</div>
+        <div id="prox24" style="display:none"></div>
+      </div>
+      <div class="count card">
+        <div class="lbl">Cierre de la porra (fase de grupos)</div>
+        <div class="big" id="cd-porra">—</div>
+        <div class="sub">Rellena antes del 11 jun · 17:00 h (España)</div>
+      </div>
     </div>
   </section>
 
-  <!-- CUADRO -->
-  <section id="cuadro">
-    <h2 class="sec"><span class="ic">🏆</span> Eliminatorias</h2>
-    <p class="lead">Eliminación directa desde la Ronda de 32 hasta la final.</p>
-    <div class="bracket" id="bracket"></div>
+  <!-- BUSCAR -->
+  <section id="buscar">
+    <h2 class="sec"><span class="ic">🔎</span> Buscar selección</h2>
+    <p class="lead">Escribe una selección para ver su grupo y sus 3 partidos de la fase de grupos, con <b>fecha, hora (España) y sede</b>. Ordenados por fecha.</p>
+    <div class="search">
+      <input id="q" type="text" placeholder="Ej: España, Argentina, Brasil…" autocomplete="off">
+    </div>
+    <div id="search-res"></div>
   </section>
-
   <footer>
     Datos de formato, sedes y fechas: oficiales FIFA 2026. Emparejamientos de grupos según la porra.<br>
     Porra Mundial 2026 · Patrocinado por Supplia.
@@ -461,17 +470,26 @@ async function renderGrupos(){
     let filas;
     if(hayResultados){
       const tabla = clasificacionGrupo(g, resultados);
-      filas = tabla.map((x,i)=>{
+      const colHdr = `<div class="grp-col-hdr"><span></span><span></span><span></span>`
+        + `<span class="h-pj">PJ</span><span class="h-pts">Pts</span><span class="h-gd">DG</span></div>`;
+      filas = colHdr + tabla.map((x,i)=>{
         let cls="elim", marca="";
         if(i<2){ cls="q1"; }
         else if(i===2){ cls = mejores8.has(x.t) ? "q3" : "cand"; }
         if(i===2 && mejores8.has(x.t)) marca=" ★";
         const dg = (x.gd>0?"+":"")+x.gd;
         return `<div class="team ${cls}"><span class="pos">${i+1}</span><span class="fl">${FLAG[x.t]}</span>`
-             + `<span class="nm">${x.t}${marca}</span><span class="st">${x.pts} pt · ${dg}</span></div>`;
+             + `<span class="nm">${x.t}${marca}</span>`
+             + `<span class="st-pj">${x.pj}</span>`
+             + `<span class="st-pts">${x.pts}</span>`
+             + `<span class="st-gd">${dg}</span></div>`;
       }).join("");
     } else {
-      filas = EQUIPOS_GRUPO[g].map(t=>`<div class="team"><span class="fl">${FLAG[t]}</span><span class="nm">${t}</span></div>`).join("");
+      filas = EQUIPOS_GRUPO[g].map((t,i)=>
+        `<div class="team"><span class="pos">${i+1}</span><span class="fl">${FLAG[t]}</span>`
+        +`<span class="nm">${t}</span>`
+        +`<span class="st-pj">0</span><span class="st-pts">0</span><span class="st-gd">0</span></div>`
+      ).join("");
     }
     d.innerHTML=`<div class="gh"><span class="gb">${g}</span><span class="gt">Grupo ${g}</span></div>${filas}`;
     cont.appendChild(d);
